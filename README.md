@@ -8,7 +8,7 @@ The user can then view a mood journal which displays what strategies were effect
 
 ## MVP
 
-- User should be able to select a mood from a pre-populated drop-down list
+- User should be able to select a mood from a mood slider
 - The user reviews a corresponding quote, stretch diagram and video
 - User can fill a journal where they can add a comment on whether or not it was effective
 - User should be able to review their mood journal diary to view what they wrote and their mood on that day
