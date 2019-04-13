@@ -1,7 +1,6 @@
 package com.codeclan.example.ctfo_server.projections;
 
-import com.codeclan.example.ctfo_server.models.journal.MoodJournal;
-import com.codeclan.example.ctfo_server.models.moods.Mood;
+import com.codeclan.example.ctfo_server.models.MoodJournal;
 import org.springframework.data.rest.core.config.Projection;
 
 import java.sql.Date;
@@ -10,7 +9,6 @@ import java.sql.Date;
 public interface EmbedMoodJournal {
     Long getId();
     Date getDate();
-    Mood startMood();
     String comment();
     String endMood();
 }
