@@ -17,8 +17,8 @@ class AdviseMe extends Component {
 
   render(){
     return(
-      <div className="button">
-       <button onClick={this.getAdvice}>Advise Me!</button>
+      <div>
+       <button className="button" onClick={this.getAdvice}>Advise Me!</button>
        <p>{this.state.advice}</p>
       </div>
      )

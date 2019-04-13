@@ -7,33 +7,32 @@ class Map extends Component {
 
   static defaultProps = {
       center: {
-        lat: 59.95,
-        lng: 30.33
+        lat: 55.86,
+        lng: -4.25
       },
       zoom: 11
     };
 
     render() {
       return (
-        // Important! Always set the container height explicitly
         <div style={{ height: '100vh', width: '100%' }}>
           <GoogleMapReact
-            bootstrapURLKeys={{ key: 'my keyI', language: 'en', }}
+          hostname={"maps.googleapis.com"}
+          pathname={"/maps/api/js"}
+          query={{ key: 'YOUR_API_KEY', libraries: 'geometry,drawing,places' }}
             defaultCenter={this.props.center}
             defaultZoom={this.props.zoom}
+            yesIWantToUseGoogleMapApiInternals
           >
             <AnyReactComponent
-              lat={59.955413}
-              lng={30.337844}
-              text="My Marker"
+              lat={55.865351}
+              lng={-4.257576}
+              text="ME"
             />
           </GoogleMapReact>
         </div>
       );
     }
-
-
-
 
 }
 
