@@ -18,9 +18,9 @@ class MainContainer extends Component {
         <NavBar />
         <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact Path="/moodjournal" component={MoodJournal} />
-        <Route exact path="/parkfinder" component={Map} />
         <Route exact path="/pressMe" component={PressMeContainer} />
+        <Route exact path="/parkfinder" component={Map} />
+        <Route exact path="/moodjournal" component={MoodJournal} />
         </Switch>
       </React.Fragment>
     </Router>
