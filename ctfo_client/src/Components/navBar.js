@@ -10,7 +10,7 @@ const NavBar = () => (
       <Link to="/pressMe">Press Me</Link>
     </li>
     <li>
-      <Link to="/calender">Mood Journal</Link>
+      <Link to="/moodjournal">Mood Journal</Link>
     </li>
     <li>
       <Link to="/favourites">Favourites</Link>
