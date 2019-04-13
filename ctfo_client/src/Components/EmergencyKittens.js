@@ -17,8 +17,8 @@ class EmergencyKittens extends Component {
 
   render(){
     return(
-      <div className="button">
-       <button onClick={this.getKittens}>Emergency Kittens!</button>
+      <div>
+       <button className="button" onClick={this.getKittens}>Emergency Kittens!</button>
        <img id="kittens" src={this.state.kitten} alt=""></img>
       </div>
      )

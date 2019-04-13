@@ -19,8 +19,8 @@ class QuoteMe extends Component {
 
   render(){
     return(
-      <div className="button">
-       <button onClick={this.getQuote}>Quote Me!</button>
+      <div>
+       <button className="button" onClick={this.getQuote}>Quote Me!</button>
        <p>{this.state.quote}</p>
       </div>
      )

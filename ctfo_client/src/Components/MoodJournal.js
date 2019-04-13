@@ -2,10 +2,12 @@ import React, {Component} from 'react';
 import Calendar from 'react-calendar';
 
 class MoodJournal extends Component {
-
-  state = {
+  constructor(props){
+    super(props);
+    this.state = {
     date: new Date(),
   }
+}
 
   onChange = date => this.setState({ date })
 
