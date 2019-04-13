@@ -1,5 +1,9 @@
 package com.codeclan.example.ctfo_server.models;
 
+import com.codeclan.example.ctfo_server.models.resources.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -16,14 +20,20 @@ public class Mood implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "quotes")
-    private List<String> quotes;
+    @JsonIgnoreProperties("moods")
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
+    @OneToMany(mappedBy = "mood", fetch = FetchType.LAZY)
+    private List<Quote> quotes;
 
-    @Column(name = "images")
-    private List<String> images;
+    @JsonIgnoreProperties("moods")
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
+    @OneToMany(mappedBy = "mood", fetch = FetchType.LAZY)
+    private List<Image> images;
 
-    @Column(name = "videos")
-    private List<String> videos;
+    @JsonIgnoreProperties("moods")
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
+    @OneToMany(mappedBy = "mood", fetch = FetchType.LAZY)
+    private List<Video> videos;
 
     public Mood(String name) {
         this.name = name;
@@ -52,39 +62,39 @@ public class Mood implements Serializable {
         this.name = name;
     }
 
-    public List<String> getQuotes() {
+    public List<Quote> getQuotes() {
         return quotes;
     }
 
-    public void setQuotes(List<String> quotes) {
+    public void setQuotes(List<Quote> quotes) {
         this.quotes = quotes;
     }
 
-    public List<String> getImages() {
+    public List<Image> getImages() {
         return images;
     }
 
-    public void setImages(List<String> images) {
+    public void setImages(List<Image> images) {
         this.images = images;
     }
 
-    public List<String> getVideos() {
+    public List<Video> getVideos() {
         return videos;
     }
 
-    public void setVideos(List<String> videos) {
+    public void setVideos(List<Video> videos) {
         this.videos = videos;
     }
 
-    public void addQuote(String quote) {
+    public void addQuote(Quote quote) {
         this.quotes.add(quote);
     }
 
-    public void addImage(String image) {
+    public void addImage(Image image) {
         this.images.add(image);
     }
 
-    public void addVideo(String video) {
+    public void addVideo(Video video) {
         this.videos.add(video);
     }
 
