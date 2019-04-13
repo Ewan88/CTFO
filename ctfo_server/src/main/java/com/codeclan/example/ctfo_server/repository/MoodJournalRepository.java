@@ -1,6 +1,6 @@
 package com.codeclan.example.ctfo_server.repository;
 
-import com.codeclan.example.ctfo_server.models.journal.MoodJournal;
+import com.codeclan.example.ctfo_server.models.MoodJournal;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

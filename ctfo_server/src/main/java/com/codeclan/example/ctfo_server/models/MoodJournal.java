@@ -1,6 +1,4 @@
-package com.codeclan.example.ctfo_server.models.journal;
-
-import com.codeclan.example.ctfo_server.models.moods.Mood;
+package com.codeclan.example.ctfo_server.models;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -12,9 +10,6 @@ public class MoodJournal {
     @Column(name = "date")
     private Date date;
 
-    @Column(name = "startMood")
-    private Mood startMood;
-
     @Column(name = "comment")
     private String comment;
 
@@ -25,9 +20,8 @@ public class MoodJournal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    public MoodJournal(Date date, Mood startMood, String comment, String endMood){
+    public MoodJournal(Date date, String comment, String endMood){
         this.date = date;
-        this.startMood = startMood;
         this.comment = comment;
         this.endMood = endMood;
     }
@@ -42,14 +36,6 @@ public class MoodJournal {
 
     public void setDate(Date date) {
         this.date = date;
-    }
-
-    public Mood getStartMood() {
-        return startMood;
-    }
-
-    public void setStartMood(Mood startMood) {
-        this.startMood = startMood;
     }
 
     public String getComment() {
