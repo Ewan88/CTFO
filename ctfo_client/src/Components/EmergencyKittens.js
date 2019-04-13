@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 class EmergencyKittens extends Component {
   constructor(props){
     super(props);
@@ -20,11 +19,10 @@ class EmergencyKittens extends Component {
     return(
       <div className="button">
        <button onClick={this.getKittens}>Emergency Kittens!</button>
-       <img src={this.state.kitten} alt="kitten"></img>
+       <img id="kittens" src={this.state.kitten} alt=""></img>
       </div>
      )
   }
-
 }
 
 export default EmergencyKittens;
