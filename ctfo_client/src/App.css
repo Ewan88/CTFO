@@ -6,3 +6,8 @@
 .App label {
   font-size: 30px;
 }
+
+#kittens {
+  width: 40%;
+  height: auto;
+}
