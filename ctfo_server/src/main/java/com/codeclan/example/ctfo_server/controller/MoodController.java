@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/mood")
+@RequestMapping("/moods")
 public class MoodController {
 
     @Autowired
@@ -21,5 +21,6 @@ public class MoodController {
 
     @Autowired
     VideoRepository videoRepository;
+
 
 }
