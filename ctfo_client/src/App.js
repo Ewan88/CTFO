@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MainContainer from './containers/MainContainer'
+import Main from './Components/Main'
 import './App.css';
 
 class App extends Component {
@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <MainContainer />
+        <Main />
       </div>
     );
   }
