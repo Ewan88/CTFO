@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import NavBar from "../Components/navBar";
 import Home from "../Components/Home";
-import PressMe from "../Components/PressMe";
+import PressMeContainer from "../containers/PressMeContainer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class MainContainer extends Component {
@@ -15,7 +15,7 @@ class MainContainer extends Component {
         <NavBar />
         <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/pressMe" component={PressMe} />
+        <Route exact path="/pressMe" component={PressMeContainer} />
         </Switch>
       </React.Fragment>
     </Router>
