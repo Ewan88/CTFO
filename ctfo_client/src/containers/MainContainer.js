@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import NavBar from "./navBar";
-import Home from "./Home";
-import PressMe from "./PressMe";
+import NavBar from "../Components/navBar";
+import Home from "../Components/Home";
+import PressMe from "../Components/PressMe";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-class Main extends Component {
+class MainContainer extends Component {
 
 
 
@@ -23,4 +23,4 @@ class Main extends Component {
 }
 }
 
-export default Main;
+export default MainContainer;
