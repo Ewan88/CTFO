@@ -13,6 +13,9 @@ const NavBar = () => (
       <Link to="/moodjournal">Mood Journal</Link>
     </li>
     <li>
+      <Link to="/parkfinder">Park Finder</Link>
+    </li>
+    <li>
       <Link to="/favourites">Favourites</Link>
     </li>
   </ul>

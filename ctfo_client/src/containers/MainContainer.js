@@ -3,6 +3,7 @@ import NavBar from "../Components/navBar";
 import Home from "../Components/Home";
 import PressMe from "../Components/PressMe";
 import MoodJournal from "../Components/MoodJournal";
+import Map from "../Components/Map";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class MainContainer extends Component {
@@ -18,6 +19,7 @@ class MainContainer extends Component {
         <Route exact path="/" component={Home} />
         <Route exact Path="/moodjournal" component={MoodJournal} />
         <Route exact path="/pressMe" component={PressMe} />
+        <Route exact path="/parkfinder" component={Map} />
         </Switch>
       </React.Fragment>
     </Router>
