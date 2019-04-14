@@ -37,17 +37,17 @@ public class DataLoader implements ApplicationRunner {
         Mood depressed = new Mood("Depressed");
         moodRepository.save(depressed);
 
-        Mood ecstatic = new Mood("Ecstatic");
-        moodRepository.save(ecstatic);
-
-        Mood happy = new Mood("Happy");
-        moodRepository.save(happy);
+        Mood sad = new Mood("Sad");
+        moodRepository.save(sad);
 
         Mood neutral = new Mood("Neutral");
         moodRepository.save(neutral);
 
-        Mood sad = new Mood("Sad");
-        moodRepository.save(sad);
+        Mood happy = new Mood("Happy");
+        moodRepository.save(happy);
+
+        Mood ecstatic = new Mood("Ecstatic");
+        moodRepository.save(ecstatic);
 
         Quote depressedQuote1 = new Quote(
                 "Don't let life discourage you; everyone who got where he is had to begin where he was.",
