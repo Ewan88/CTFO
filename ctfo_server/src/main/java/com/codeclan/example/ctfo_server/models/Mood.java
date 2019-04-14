@@ -26,8 +26,12 @@ public class Mood implements Serializable {
     private List<Quote> quotes;
 
     @JsonIgnoreProperties("moods")
-    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
-    @OneToMany(mappedBy = "mood", fetch = FetchType.LAZY)
+    @ManyToMany
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+    @JoinTable(
+            joinColumns = {@JoinColumn(name = "mood_id", nullable = false, updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "image_id", nullable = false, updatable = false)}
+    )
     private List<Image> images;
 
     @JsonIgnoreProperties("moods")
