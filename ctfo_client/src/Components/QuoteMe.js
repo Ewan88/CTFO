@@ -42,6 +42,7 @@ class QuoteMe extends Component {
        <button className="button" onClick={this.openShowQuote}>Quote Me!</button>
       </div>
       <Modal
+       className="modal-box"
        isOpen={this.state.modalIsOpen}
        onRequestClose={this.closeModal}
        contentLabel="Example Modal"
