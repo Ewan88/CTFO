@@ -23,7 +23,6 @@ class MainContainer extends Component {
      </React.Fragment>
    </Router>
  );
-
 }
 }
 
