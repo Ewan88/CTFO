@@ -1,10 +1,13 @@
 package com.codeclan.example.ctfo_server.controller;
 
+import com.codeclan.example.ctfo_server.models.Mood;
 import com.codeclan.example.ctfo_server.repository.MoodRepository;
-import com.codeclan.example.ctfo_server.repository.resources.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/moods")
@@ -13,14 +16,10 @@ public class MoodController {
     @Autowired
     MoodRepository moodRepository;
 
-    @Autowired
-    ImageRepository imageRepository;
-
-    @Autowired
-    QuoteRepository quoteRepository;
-
-    @Autowired
-    VideoRepository videoRepository;
+    @GetMapping
+    public List<Mood> getAllMoods() {
+        return moodRepository.findAll();
+    }
 
 
 }

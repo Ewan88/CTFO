@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
 class Home extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       mood_id: 3
     }
