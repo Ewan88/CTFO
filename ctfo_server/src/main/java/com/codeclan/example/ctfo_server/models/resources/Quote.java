@@ -13,10 +13,10 @@ public class Quote {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "quote_url")
+    @Column(name = "quote")
     private String quote;
 
-    @Column(name = "authoer")
+    @Column(name = "author")
     private String author;
 
     @JsonIgnoreProperties("quotes")
