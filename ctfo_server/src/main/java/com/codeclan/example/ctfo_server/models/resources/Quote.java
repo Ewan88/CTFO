@@ -14,15 +14,19 @@ public class Quote {
     private Long id;
 
     @Column(name = "quote_url")
-    private String quoteUrl;
+    private String quote;
+
+    @Column(name = "authoer")
+    private String author;
 
     @JsonIgnoreProperties("quotes")
     @ManyToOne
     @JoinColumn(name = "mood_id", nullable = false)
     private Mood mood;
 
-    public Quote(String quoteUrl, Mood mood) {
-        this.quoteUrl = quoteUrl;
+    public Quote(String quote, String author, Mood mood) {
+        this.quote = quote;
+        this.author = author;
         this.mood = mood;
     }
 
@@ -37,12 +41,20 @@ public class Quote {
         this.id = id;
     }
 
-    public String getQuoteUrl() {
-        return quoteUrl;
+    public String getQuote() {
+        return quote;
     }
 
-    public void setQuoteUrl(String quoteUrl) {
-        this.quoteUrl = quoteUrl;
+    public void setQuote(String quote) {
+        this.quote = quote;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public Mood getMood() {

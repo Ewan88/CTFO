@@ -2,8 +2,11 @@ package com.codeclan.example.ctfo_server.models.resources;
 
 import com.codeclan.example.ctfo_server.models.Mood;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "images")
@@ -17,14 +20,19 @@ public class Image {
     private String imageUrl;
 
     @JsonIgnoreProperties("images")
-    @ManyToOne
-    @JoinColumn(name = "mood_id", nullable = false)
-    private Mood mood;
+    @ManyToMany
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+    @JoinTable(
+            name = "moods_images",
+            joinColumns = {@JoinColumn(name = "image_id", nullable = false, updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "mood_id", nullable = false, updatable = false)}
+    )
+    private List<Mood> moods;
 
 
-    public Image(String imageUrl, Mood mood) {
+    public Image(String imageUrl) {
         this.imageUrl = imageUrl;
-        this.mood = mood;
+        this.moods = new ArrayList<>();
     }
 
     public Image() {
@@ -46,11 +54,15 @@ public class Image {
         this.imageUrl = imageUrl;
     }
 
-    public Mood getMood() {
-        return mood;
+    public List<Mood> getMoods() {
+        return moods;
     }
 
-    public void setMood(Mood mood) {
-        this.mood = mood;
+    public void setMoods(List<Mood> moods) {
+        this.moods = moods;
+    }
+
+    public void addMood(Mood mood) {
+        this.moods.add(mood);
     }
 }
