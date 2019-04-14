@@ -5,10 +5,10 @@ import org.springframework.data.rest.core.config.Projection;
 
 import java.sql.Date;
 
-@Projection(name = "embedMoodJournal", types = MoodJournal.class)
-public interface EmbedMoodJournal {
-    Long getId();
+@Projection(name = "embedMoodJournals", types = MoodJournal.class)
+public interface EmbedMoodJournals {
+    long getId();
     Date getDate();
-    String comment();
-    String endMood();
+    String getComment();
+    String getEndMood();
 }

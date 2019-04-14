@@ -17,8 +17,8 @@ public class ImageController {
     @Autowired
     ImageRepository imageRepository;
 
-    @GetMapping
-    public List<Image> getAllImages() {
-        return imageRepository.findAll();
-    }
+//    @GetMapping
+//    public List<Image> getAllImages() {
+//        return imageRepository.findAll();
+//    }
 }

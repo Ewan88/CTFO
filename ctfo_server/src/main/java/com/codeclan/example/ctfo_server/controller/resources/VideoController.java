@@ -16,8 +16,8 @@ public class VideoController {
     @Autowired
     VideoRepository videoRepository;
 
-    @GetMapping
-    public List<Video> getAllVideos() {
-        return videoRepository.findAll();
-    }
+//    @GetMapping
+//    public List<Video> getAllVideos() {
+//        return videoRepository.findAll();
+//    }
 }

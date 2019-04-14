@@ -16,8 +16,8 @@ public class QuoteController {
     @Autowired
     QuoteRepository quoteRepository;
 
-    @GetMapping
-    public List<Quote> getAllQuotes() {
-        return quoteRepository.findAll();
-    }
+//    @GetMapping
+//    public List<Quote> getAllQuotes() {
+//        return quoteRepository.findAll();
+//    }
 }

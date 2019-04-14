@@ -67,7 +67,7 @@ public class Mood implements Serializable {
     }
 
     public List<Quote> getQuotes() {
-        return quotes;
+        return this.quotes;
     }
 
     public void setQuotes(List<Quote> quotes) {
@@ -75,7 +75,7 @@ public class Mood implements Serializable {
     }
 
     public List<Image> getImages() {
-        return images;
+        return this.images;
     }
 
     public void setImages(List<Image> images) {
@@ -83,7 +83,7 @@ public class Mood implements Serializable {
     }
 
     public List<Video> getVideos() {
-        return videos;
+        return this.videos;
     }
 
     public void setVideos(List<Video> videos) {
