@@ -16,13 +16,17 @@ public class Quote {
     @Column(name = "quote_url")
     private String quoteUrl;
 
+    @Column(name = "authoer")
+    private String author;
+
     @JsonIgnoreProperties("quotes")
     @ManyToOne
     @JoinColumn(name = "mood_id", nullable = false)
     private Mood mood;
 
-    public Quote(String quoteUrl, Mood mood) {
+    public Quote(String quoteUrl, String author, Mood mood) {
         this.quoteUrl = quoteUrl;
+        this.author = author;
         this.mood = mood;
     }
 
@@ -43,6 +47,14 @@ public class Quote {
 
     public void setQuoteUrl(String quoteUrl) {
         this.quoteUrl = quoteUrl;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public Mood getMood() {
