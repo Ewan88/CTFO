@@ -1,8 +1,10 @@
 class Request {
 
-  get(url){
+  get(url) {
     return fetch(url)
-    .then((res) => res.json())
+    // .then((res) => res.json());
+    .then(res => res.text())
+    .then(text => console.log(text))
   }
 }
 
