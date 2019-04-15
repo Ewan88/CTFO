@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
+import MoodSelected from './MoodSelected';
 
 class Home extends Component {
   constructor(props){
     super(props);
     this.state = {
       mood_id: 3,
-      mood: []
+      mood: null
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSlide = this.handleSlide.bind(this);
@@ -39,6 +40,7 @@ class Home extends Component {
             className="custom-range"
             id="customRange1" />
         <label htmlFor="customRange1">    ☺</label>
+        <MoodSelected mood={this.state.mood} />
       </div>
     );
   }
