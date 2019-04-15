@@ -1,6 +1,5 @@
 package com.codeclan.example.ctfo_server.models;
 
-import com.codeclan.example.ctfo_server.models.resources.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 

@@ -8,7 +8,7 @@ const JournalSelected = ({entry}) => {
 
   return(
     <div className="journal-selected">
-      <p>Hello</p>
+      <p>{entry}</p>
     </div>
   )
 

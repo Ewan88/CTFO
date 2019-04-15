@@ -1,7 +1,7 @@
 package com.codeclan.example.ctfo_server.models;
 
 import javax.persistence.*;
-import java.text.SimpleDateFormat;
+import java.sql.Date;
 
 
 @Entity
@@ -14,7 +14,7 @@ public class Journal {
 
     @Column(name = "date")
 //    @Temporal(TemporalType.DATE)
-    private SimpleDateFormat date;
+    private Date date;
 
     @Column(name = "comment")
     private String comment;
@@ -23,7 +23,7 @@ public class Journal {
     private String endMood;
 
 
-    public Journal(SimpleDateFormat date, String comment, String endMood){
+    public Journal(Date date, String comment, String endMood){
         this.date = date;
         this.comment = comment;
         this.endMood = endMood;
@@ -41,11 +41,11 @@ public class Journal {
         this.id = id;
     }
 
-    public SimpleDateFormat getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(SimpleDateFormat date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

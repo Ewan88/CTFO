@@ -1,8 +1,7 @@
 package com.codeclan.example.ctfo_server.projections;
 
 import com.codeclan.example.ctfo_server.models.Mood;
-import com.codeclan.example.ctfo_server.models.resources.Image;
-import com.codeclan.example.ctfo_server.models.resources.Video;
+import com.codeclan.example.ctfo_server.models.Video;
 import org.springframework.data.rest.core.config.Projection;
 
 @Projection(name = "embedVideos", types = Video.class)

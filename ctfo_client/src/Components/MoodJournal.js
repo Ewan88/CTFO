@@ -6,16 +6,16 @@ class MoodJournal extends Component {
   constructor(props){
     super(props);
     this.state = {
-    date: new Date(),
-    entry: null
-  }
-}
-
-  onChange(event) {
-    console.log(event);
+      date: new Date(),
+      entry: 'hello'
+    }
+    this.onChange = this.onChange.bind(this);
   }
 
-
+  onChange(date){
+    this.setState({date: date});
+    console.log(this.state.date);
+  }
 
   render(){
     return (
@@ -23,11 +23,10 @@ class MoodJournal extends Component {
         <h1>Mood Journal</h1>
         <Calendar onChange={this.onChange}
         value={this.state.date} />
-        <JournalSelected entry={this.state.entry}/>
+        <JournalSelected entry={this.state.date.toLocaleDateString('en-US')}/>
       </div>
     )
   }
-
 }
 
 export default MoodJournal;

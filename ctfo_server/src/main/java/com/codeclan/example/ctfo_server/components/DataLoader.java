@@ -1,9 +1,8 @@
 package com.codeclan.example.ctfo_server.components;
 
 import com.codeclan.example.ctfo_server.models.*;
-import com.codeclan.example.ctfo_server.models.resources.*;
 import com.codeclan.example.ctfo_server.repository.Images.*;
-import com.codeclan.example.ctfo_server.repository.Journals.MoodJournalRepository;
+import com.codeclan.example.ctfo_server.repository.Journals.JournalRepository;
 import com.codeclan.example.ctfo_server.repository.Moods.MoodRepository;
 import com.codeclan.example.ctfo_server.repository.Quotes.QuoteRepository;
 import com.codeclan.example.ctfo_server.repository.Videos.VideoRepository;
@@ -13,7 +12,6 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import java.sql.Date;
-import java.text.SimpleDateFormat;
 
 @Component
 public class DataLoader implements ApplicationRunner {
@@ -31,7 +29,7 @@ public class DataLoader implements ApplicationRunner {
     VideoRepository videoRepository;
 
     @Autowired
-    MoodJournalRepository moodJournalRepository;
+    JournalRepository journalRepository;
 
     public DataLoader() {
 
@@ -259,13 +257,13 @@ public class DataLoader implements ApplicationRunner {
         );
         videoRepository.save(videoSad2);
 
-        SimpleDateFormat testDate = new SimpleDateFormat("2019-04-20");
+        Date testDate = new Date(2019 - 1900, 3, 20);
 
         Journal journalEntry1 = new Journal(
                 testDate,
                 "test comment",
                 "test mood"
         );
-        moodJournalRepository.save(journalEntry1);
+        journalRepository.save(journalEntry1);
     }
 }

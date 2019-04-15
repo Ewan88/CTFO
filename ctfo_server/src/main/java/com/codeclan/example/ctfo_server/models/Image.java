@@ -1,4 +1,4 @@
-package com.codeclan.example.ctfo_server.models.resources;
+package com.codeclan.example.ctfo_server.models;
 
 import com.codeclan.example.ctfo_server.models.Mood;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
