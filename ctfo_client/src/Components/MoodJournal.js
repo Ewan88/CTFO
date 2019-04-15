@@ -8,6 +8,7 @@ class MoodJournal extends Component {
     super(props);
     this.state = {
       date: new Date(),
+      entries_holder: {},
       entries: []
     }
     this.onChange = this.onChange.bind(this);
@@ -17,22 +18,48 @@ class MoodJournal extends Component {
     const request = new Request();
     request.get('/api/journals')
     .then(data => {
-      this.setState({entries: data._embedded})
-    });
+      this.setState({entries: data._embedded.journals})
+    })
+    // .then(this.loadEntries())
+    .then(this.loadCalendar())
+  }
+
+  loadEntries(){
+    console.log('loading entries...');
+    let a = [];
+    if (this.state.entries) {
+      for (let i = 0; i < this.state.entries.length; i++){
+        console.log(this.state.entries[i].date);
+        a.push(this.state.entries[i].date)
+      }
+      return a;
+    } else {
+      return new Date();
+    }
+  }
+
+  loadCalendar(){
+    console.log(this.state.entries);
+    if (this.state.entries) {
+      return (
+        <Calendar onChange={this.onChange} view="month"
+        value={this.loadEntries()} />
+      )
+    } else {
+      return
+    }
   }
 
   onChange(date){
     this.setState({date: date});
-    console.log(this.state.date);
   }
 
   render(){
     return (
       <div>
-        <h1>Mood Journal</h1>
-        <Calendar onChange={this.onChange}
-        value={this.state.date} />
-        <JournalSelected entry={this.state.date.toLocaleDateString('en-US')}/>
+      <h1>Mood Journal</h1>
+      {this.loadCalendar()}
+      <JournalSelected entry={this.state.date.toLocaleDateString('en-US')}/>
       </div>
     )
   }
