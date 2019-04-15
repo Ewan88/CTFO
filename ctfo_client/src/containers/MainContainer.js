@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import NavBar from "../Components/navBar";
-import Home from "../Components/Home";
-import PressMe from "../Components/PressMe";
+import HomeContainer from "./HomeContainer";
+// import PressMe from "../Components/PressMe";
 import MoodJournal from "../Components/MoodJournal";
 import Map from "../Components/Map";
 import PressMeContainer from "../containers/PressMeContainer";
-import HomeContainer from "../containers/HomeContainer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
 class MainContainer extends Component {
 
  render() {
