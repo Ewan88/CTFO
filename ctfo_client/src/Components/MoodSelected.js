@@ -6,12 +6,16 @@ const MoodSelected = ({mood}) => {
     return null
   }
 
+  function randomNum(length){
+    return Math.floor(Math.random()*length)
+  }
+
   return(
     <div className="mood-selected">
-      <p>{mood.quotes[0].text}</p>
-      <img src={mood.images[0].imageUrl} alt=""></img>
+      <p>{mood.quotes[randomNum(mood.quotes.length)].text}</p>
+      <img src={mood.images[randomNum(mood.images.length)].imageUrl} alt=""></img>
       <video width="320" height="240" controls>
-      <source src={mood.videos[0].videoUrl}/>
+      <source src={mood.videos[randomNum(mood.videos.length)].videoUrl}/>
       </video>
     </div>
   )

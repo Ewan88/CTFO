@@ -35,8 +35,8 @@ class Home extends Component {
             type="range"
             value={this.state.mood_id}
             onChange={this.handleChange}
-            min="1"
-            max="5"
+            min="0"
+            max="4"
             className="custom-range"
             id="customRange1" />
         <label htmlFor="customRange1">    ☺</label>
