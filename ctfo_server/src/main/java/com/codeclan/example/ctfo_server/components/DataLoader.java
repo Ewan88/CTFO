@@ -208,49 +208,50 @@ public class DataLoader implements ApplicationRunner {
         moodRepository.save(sad);
 
         Video videoDepressed1 = new Video(
-                "https://www.youtube.com/watch?v=T8_JATyButc",
+                "https://www.youtube.com/embed/T8_JATyButc?controls=0",
                 depressed
         );
         videoRepository.save(videoDepressed1);
 
         Video videoDepressed2 = new Video(
-                "https://www.youtube.com/watch?v=IDPDEKtd2yM",
+                "https://www.youtube.com/embed/IDPDEKtd2yM?controls=0",
                 depressed
         );
         videoRepository.save(videoDepressed2);
 
         Video videoEcstatic1 = new Video(
-                "https://www.youtube.com/watch?v=4q1dgn_C0AU",
+                "https://www.youtube.com/embed/4q1dgn_C0AU",
                 ecstatic
+
         );
         videoRepository.save(videoEcstatic1);
 
         Video videoHappy1 = new Video(
-                "https://www.youtube.com/watch?v=d-LKa1Y9_ok",
+                "https://www.youtube.com/embed/d-LKa1Y9_ok",
                 happy
         );
         videoRepository.save(videoHappy1);
 
         Video videoNeutral1 = new Video(
-                "https://www.youtube.com/watch?v=_LXiSPpfM54",
+                "https://www.youtube.com/embed/_LXiSPpfM54",
                 neutral
         );
         videoRepository.save(videoNeutral1);
 
         Video videoNeutral2 = new Video(
-                "https://www.youtube.com/watch?v=Kestt5BI3eg",
+                "https://www.youtube.com/embed/Kestt5BI3eg",
                 neutral
         );
         videoRepository.save(videoNeutral2);
 
         Video videoSad1 = new Video(
-                "https://www.youtube.com/watch?v=lLWEXRAnQd0",
+                "https://www.youtube.com/embed/lLWEXRAnQd0",
                 sad
         );
         videoRepository.save(videoSad1);
 
         Video videoSad2 = new Video(
-                "https://www.youtube.com/watch?v=1iFpw0uIkbo",
+                "https://www.youtube.com/embed/1iFpw0uIkbo",
                 sad
         );
         videoRepository.save(videoSad2);
