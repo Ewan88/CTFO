@@ -1,11 +1,17 @@
 import React, {Component} from 'react';
+import Modal from 'react-modal';
+
 class AdviseMe extends Component {
   constructor(props){
     super(props);
       this.state = {
-        advice: ''
+        advice: '',
+        modalIsOpen: false
       };
       this.getAdvice = this.getAdvice.bind(this);
+      this.openModal = this.openModal.bind(this);
+      this.closeModal = this.closeModal.bind(this);
+      this.openShowAdvice = this.openShowAdvice.bind(this);
   }
 
   getAdvice(){
@@ -15,12 +21,36 @@ class AdviseMe extends Component {
     .then(data => this.setState({advice: data.slip.advice}))
   }
 
+  openModal() {
+  this.setState({modalIsOpen: true});
+  }
+
+  closeModal() {
+  this.setState({modalIsOpen: false});
+  }
+
+  openShowAdvice(){
+    this.openModal();
+    this.getAdvice();
+  }
+
   render(){
     return(
+      <React.Fragment>
       <div>
-       <button className="button" onClick={this.getAdvice}>Advise Me!</button>
-       <p>{this.state.advice}</p>
+       <button className="button" onClick={this.openShowAdvice}>Advise Me!</button>
       </div>
+      <Modal
+       className="modal-box"
+       isOpen={this.state.modalIsOpen}
+       onRequestClose={this.closeModal}
+       contentLabel="Example Modal"
+       ariaHideApp={false}
+       >
+       <p>{this.state.advice}</p>
+       <button onClick={this.closeModal}>close</button>
+      </Modal>
+      </React.Fragment>
      )
   }
 }

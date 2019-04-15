@@ -38,13 +38,13 @@ class EmergencyKittens extends Component {
       <React.Fragment>
       <div>
        <button className="button" onClick={this.openShowKitten}>Emergency Kittens!</button>
-
       </div>
       <Modal
        className="modal-box"
        isOpen={this.state.modalIsOpen}
        onRequestClose={this.closeModal}
        contentLabel="Example Modal"
+       ariaHideApp={false}
        >
       <img id="kittens" src={this.state.kitten} alt=""></img>
        <button onClick={this.closeModal}>close</button>
