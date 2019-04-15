@@ -1,9 +1,11 @@
 import React from 'react';
 
 const MoodSelected = ({mood}) => {
-  // console.log(mood.quotes);
+  let index = null
   if (!mood){
     return null
+  } else {
+    index = randomNum(mood.quotes.length)
   }
 
   function randomNum(length){
@@ -12,12 +14,14 @@ const MoodSelected = ({mood}) => {
 
   return(
     <div className="mood-selected">
-      <p>{mood.quotes[randomNum(mood.quotes.length)].text}</p>
+      <p>{mood.name}</p>
+      <p>{mood.quotes[index].text}</p>
+      <p>{mood.quotes[index].author}</p>
       <img src={mood.images[randomNum(mood.images.length)].imageUrl} alt=""></img>
-      <video width="320" height="240" controls>
-      <source src={mood.videos[randomNum(mood.videos.length)].videoUrl}/>
-      </video>
+      <iframe width="560" height="315" src={mood.videos[randomNum(mood.videos.length)].videoUrl} frameborder="0" allow="accelerometer autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   )
+
+
 }
 export default MoodSelected;
