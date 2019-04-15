@@ -14,10 +14,10 @@ const MoodSelected = ({mood}) => {
     <div className="mood-selected">
       <p>{mood.quotes[randomNum(mood.quotes.length)].text}</p>
       <img src={mood.images[randomNum(mood.images.length)].imageUrl} alt=""></img>
-      <video width="320" height="240" controls>
-      <source src={mood.videos[randomNum(mood.videos.length)].videoUrl}/>
-      </video>
+      <iframe width="560" height="315" src={mood.videos[randomNum(mood.videos.length)].videoUrl} frameborder="0" allow="accelerometer autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   )
+
+
 }
 export default MoodSelected;
