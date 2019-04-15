@@ -4,18 +4,27 @@ class Home extends Component {
   constructor(props){
     super(props);
     this.state = {
-      mood_id: 3
+      mood_id: 3,
+      mood: {}
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleSlide = this.handleSlide.bind(this);
   }
 
   handleChange(event){
     this.setState({mood_id: event.target.value})
+    this.setState({mood: this.props.moods[this.state.mood_id]})
+    // this.handleSlide()
+  }
+
+  handleSlide(){
+    // return <div><p>{this.state.mood.quotes[0].text}</p></div>
   }
 
   render() {
     return (
-      <div className="App">
+      <div>
+      <div className="slider">
         <h1>How are you feeling today?</h1>
         <label htmlFor="customRange1">☹    </label>
           <input
@@ -27,6 +36,10 @@ class Home extends Component {
             className="custom-range"
             id="customRange1" />
         <label htmlFor="customRange1">    ☺</label>
+      </div>
+      <div>
+
+      </div>
       </div>
     );
   }

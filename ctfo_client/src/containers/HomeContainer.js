@@ -36,7 +36,7 @@ componentDidMount(){
   render(){
     return(
       <React.Fragment>
-       <Home ></Home>
+       <Home moods={this.state.moods}></Home>
       </React.Fragment>
     )
   }
