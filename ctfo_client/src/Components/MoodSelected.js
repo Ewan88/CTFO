@@ -14,6 +14,7 @@ const MoodSelected = ({mood}) => {
 
   return(
     <div className="mood-selected">
+      <p>{mood.name}</p>
       <p>{mood.quotes[index].text}</p>
       <p>{mood.quotes[index].author}</p>
       <img src={mood.images[randomNum(mood.images.length)].imageUrl} alt=""></img>
