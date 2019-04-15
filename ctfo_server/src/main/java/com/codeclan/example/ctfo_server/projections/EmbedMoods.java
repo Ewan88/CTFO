@@ -9,6 +9,7 @@ import java.util.List;
 @Projection(name = "embedMoods", types = Mood.class)
 public interface EmbedMoods {
     long getId();
+    String getName();
     List<Quote> getQuotes();
     List<Image> getImages();
     List<Video> getVideos();

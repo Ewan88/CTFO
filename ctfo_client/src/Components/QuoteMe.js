@@ -46,6 +46,7 @@ class QuoteMe extends Component {
        isOpen={this.state.modalIsOpen}
        onRequestClose={this.closeModal}
        contentLabel="Example Modal"
+       ariaHideApp={false}
        >
        <p>{this.state.quote}</p>
        <button onClick={this.closeModal}>close</button>

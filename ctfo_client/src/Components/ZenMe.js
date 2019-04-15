@@ -1,24 +1,24 @@
 import React, {Component} from 'react';
 import Modal from 'react-modal';
 
-class AdviseMe extends Component {
+class ZenMe extends Component {
   constructor(props){
     super(props);
       this.state = {
-        advice: '',
+        zen: '',
         modalIsOpen: false
       };
-      this.getAdvice = this.getAdvice.bind(this);
+      this.getZen = this.getZen.bind(this);
       this.openModal = this.openModal.bind(this);
       this.closeModal = this.closeModal.bind(this);
-      this.openShowAdvice = this.openShowAdvice.bind(this);
+      this.openShowZen = this.openShowZen.bind(this);
   }
 
-  getAdvice(){
+  getZen(){
     const url = 'https://api.adviceslip.com/advice'
     fetch(url)
     .then(res => res.json())
-    .then(data => this.setState({advice: data.slip.advice}))
+    .then(data => this.setState({zen: data.zen}))
   }
 
   openModal() {
@@ -29,16 +29,16 @@ class AdviseMe extends Component {
   this.setState({modalIsOpen: false});
   }
 
-  openShowAdvice(){
+  openShowZen(){
     this.openModal();
-    this.getAdvice();
+    this.getZen();
   }
 
   render(){
     return(
       <React.Fragment>
       <div>
-       <button className="button" onClick={this.openShowAdvice}>Advise Me!</button>
+       <button className="button" onClick={this.openShowZen}>Zen Me!</button>
       </div>
       <Modal
        className="modal-box"
@@ -47,7 +47,7 @@ class AdviseMe extends Component {
        contentLabel="Example Modal"
        ariaHideApp={false}
        >
-       <p>{this.state.advice}</p>
+       <p>{this.state.zen}</p>
        <button onClick={this.closeModal}>close</button>
       </Modal>
       </React.Fragment>
@@ -55,4 +55,4 @@ class AdviseMe extends Component {
   }
 }
 
-export default AdviseMe;
+export default ZenMe;
