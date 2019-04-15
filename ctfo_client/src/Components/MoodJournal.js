@@ -1,15 +1,24 @@
 import React, {Component} from 'react';
 import Calendar from 'react-calendar';
 import JournalSelected from './JournalSelected';
+import Request from '../helpers/request';
 
 class MoodJournal extends Component {
   constructor(props){
     super(props);
     this.state = {
       date: new Date(),
-      entry: 'hello'
+      entries: []
     }
     this.onChange = this.onChange.bind(this);
+  }
+
+  componentDidMount(){
+    const request = new Request();
+    request.get('/api/journals')
+    .then(data => {
+      this.setState({entries: data._embedded})
+    });
   }
 
   onChange(date){

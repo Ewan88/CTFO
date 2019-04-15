@@ -257,13 +257,29 @@ public class DataLoader implements ApplicationRunner {
         );
         videoRepository.save(videoSad2);
 
-        Date testDate = new Date(2019 - 1900, 3, 20);
+        Date testDate1 = new Date(2019 - 1900, 3, 20);
+        Date testDate2 = new Date(2019 - 1900, 3, 19);
+        Date testDate3 = new Date(2019 - 1900, 3, 21);
 
         Journal journalEntry1 = new Journal(
-                testDate,
-                "test comment",
-                "test mood"
+                testDate1,
+                "test comment 1",
+                "test mood 1"
         );
         journalRepository.save(journalEntry1);
+
+        Journal journalEntry2 = new Journal(
+                testDate2,
+                "test comment2 ",
+                "test mood 2"
+        );
+        journalRepository.save(journalEntry2);
+
+        Journal journalEntry3 = new Journal(
+                testDate3,
+                "test comment 3",
+                "test mood 3"
+        );
+        journalRepository.save(journalEntry3);
     }
 }
