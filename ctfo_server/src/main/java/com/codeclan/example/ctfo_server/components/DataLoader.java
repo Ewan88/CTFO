@@ -12,6 +12,8 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.sql.Date;
+
 @Component
 public class DataLoader implements ApplicationRunner {
 
@@ -255,5 +257,14 @@ public class DataLoader implements ApplicationRunner {
                 sad
         );
         videoRepository.save(videoSad2);
+
+        Date testDate = new Date(2019, 04, 01);
+
+        MoodJournal moodJournalEntry1 = new MoodJournal(
+                testDate,
+                "test comment",
+                "test mood"
+        );
+        moodJournalRepository.save(moodJournalEntry1);
     }
 }
