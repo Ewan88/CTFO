@@ -10,7 +10,7 @@ import java.util.List;
 @Projection(name = "embedQuotes", types = Quote.class)
 public interface EmbedQuotes {
     long getId();
-    String getQuote();
+    String getText();
     String getAuthor();
-    List<Quote> getQuotes();
+    Mood getMood();
 }

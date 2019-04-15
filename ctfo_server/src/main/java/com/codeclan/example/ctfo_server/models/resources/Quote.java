@@ -13,8 +13,8 @@ public class Quote {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "quote")
-    private String quote;
+    @Column(name = "text")
+    private String text;
 
     @Column(name = "author")
     private String author;
@@ -24,8 +24,8 @@ public class Quote {
     @JoinColumn(name = "mood_id", nullable = false)
     private Mood mood;
 
-    public Quote(String quote, String author, Mood mood) {
-        this.quote = quote;
+    public Quote(String text, String author, Mood mood) {
+        this.text = text;
         this.author = author;
         this.mood = mood;
     }
@@ -41,12 +41,12 @@ public class Quote {
         this.id = id;
     }
 
-    public String getQuote() {
-        return quote;
+    public String getText() {
+        return text;
     }
 
-    public void setQuote(String quote) {
-        this.quote = quote;
+    public void setText(String text) {
+        this.text = text;
     }
 
     public String getAuthor() {
