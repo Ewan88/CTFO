@@ -17,8 +17,8 @@ const MoodSelected = ({mood}) => {
       <p>{mood.name}</p>
       <p>{mood.quotes[index].text}</p>
       <p>{mood.quotes[index].author}</p>
-      <img src={mood.images[randomNum(mood.images.length)].imageUrl} alt=""></img>
-      <iframe width="560" height="315" src={mood.videos[randomNum(mood.videos.length)].videoUrl} frameborder="0" allow="accelerometer autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <img width="415" height="415" src={mood.images[randomNum(mood.images.length)].imageUrl} alt=""></img>
+      <iframe width="560" height="315" src={mood.videos[randomNum(mood.videos.length)].videoUrl} frameBorder="0" allowFullScreen></iframe>
     </div>
   )
 

@@ -10,16 +10,11 @@ class Home extends Component {
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSlide = this.handleSlide.bind(this);
-    this.setMood = this.setMood.bind(this);
   }
 
   handleChange(event){
-    this.setState({mood_id: event.target.value}, this.setMood())
-    // this.handleSlide()
-  }
-
-  setMood(){
-    this.setState({mood: this.props.moods[this.state.mood_id]})
+    console.log(event.target.value);
+    this.setState({mood: this.props.moods[event.target.value]})
   }
 
   handleSlide(){
@@ -33,7 +28,6 @@ class Home extends Component {
         <label htmlFor="customRange1">☹    </label>
           <input
             type="range"
-            value={this.state.mood_id}
             onChange={this.handleChange}
             min="0"
             max="4"
