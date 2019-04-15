@@ -13,6 +13,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 @Component
 public class DataLoader implements ApplicationRunner {
@@ -258,7 +259,7 @@ public class DataLoader implements ApplicationRunner {
         );
         videoRepository.save(videoSad2);
 
-        Date testDate = new Date(2019, 04, 01);
+        SimpleDateFormat testDate = new SimpleDateFormat("2019-04-20");
 
         Journal journalEntry1 = new Journal(
                 testDate,
