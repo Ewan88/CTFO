@@ -2,8 +2,8 @@ package com.codeclan.example.ctfo_server.components;
 
 import com.codeclan.example.ctfo_server.models.*;
 import com.codeclan.example.ctfo_server.models.resources.*;
-import com.codeclan.example.ctfo_server.repository.*;
 import com.codeclan.example.ctfo_server.repository.Images.*;
+import com.codeclan.example.ctfo_server.repository.Journals.MoodJournalRepository;
 import com.codeclan.example.ctfo_server.repository.Moods.MoodRepository;
 import com.codeclan.example.ctfo_server.repository.Quotes.QuoteRepository;
 import com.codeclan.example.ctfo_server.repository.Videos.VideoRepository;
@@ -260,11 +260,11 @@ public class DataLoader implements ApplicationRunner {
 
         Date testDate = new Date(2019, 04, 01);
 
-        MoodJournal moodJournalEntry1 = new MoodJournal(
+        Journal journalEntry1 = new Journal(
                 testDate,
                 "test comment",
                 "test mood"
         );
-        moodJournalRepository.save(moodJournalEntry1);
+        moodJournalRepository.save(journalEntry1);
     }
 }

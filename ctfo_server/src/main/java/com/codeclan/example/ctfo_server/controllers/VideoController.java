@@ -1,4 +1,4 @@
-package com.codeclan.example.ctfo_server.controller.resources;
+package com.codeclan.example.ctfo_server.controllers;
 
 import com.codeclan.example.ctfo_server.repository.Videos.VideoRepository;
 import org.springframework.beans.factory.annotation.Autowired;

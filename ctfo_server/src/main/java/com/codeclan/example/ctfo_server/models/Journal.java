@@ -4,8 +4,12 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Table(name = "journal")
-public class MoodJournal {
+@Table(name = "journals")
+public class Journal {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = "date")
     private Date date;
@@ -16,18 +20,23 @@ public class MoodJournal {
     @Column(name = "endMood")
     private String endMood;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
-    public MoodJournal(Date date, String comment, String endMood){
+    public Journal(Date date, String comment, String endMood){
         this.date = date;
         this.comment = comment;
         this.endMood = endMood;
     }
 
-    public MoodJournal(){
+    public Journal(){
 
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Date getDate() {
@@ -54,11 +63,4 @@ public class MoodJournal {
         this.endMood = endMood;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 }
