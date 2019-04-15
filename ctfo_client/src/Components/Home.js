@@ -5,7 +5,7 @@ class Home extends Component {
   constructor(props){
     super(props);
     this.state = {
-      mood_id: 3,
+      mood_id: 2,
       mood: null
     }
     this.handleChange = this.handleChange.bind(this);
