@@ -1,4 +1,4 @@
-package com.codeclan.example.ctfo_server.controller;
+package com.codeclan.example.ctfo_server.controllers;
 
 import com.codeclan.example.ctfo_server.models.Mood;
 import com.codeclan.example.ctfo_server.repository.Moods.MoodRepository;
