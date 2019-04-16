@@ -63,24 +63,13 @@ class MoodJournal extends Component {
     this.setState({date: day });
   }
 
-  // loadDays(dates){
-  //   if (dates.length === 0) {
-  //     return
-  //   } else {
-  //     const journalDates = dates.map((day) => {
-  //       return <Day modifier="selected" day={day} />
-  //     })
-  //     return {journalDates}
-  //   }
-  // }
-
   render(){
     return (
       <React.Fragment>
       <div>
       <h1>Mood Journal</h1>
       {this.loadEntries()}
-      <JournalSelected entry={'help'}/>
+      <JournalSelected entry={this.state.entries[0]}/>
       </div>
       </React.Fragment>
     )

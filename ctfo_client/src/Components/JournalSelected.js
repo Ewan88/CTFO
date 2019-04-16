@@ -7,7 +7,9 @@ const JournalSelected = ({entry}) => {
 
   return(
     <div className="journal-selected">
-      <p>{entry}</p>
+      <p>{entry.date}</p>
+      <p>{entry.comment}</p>
+      <p>{entry.endMood}</p>
     </div>
   )
 
