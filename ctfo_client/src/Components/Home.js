@@ -24,16 +24,17 @@ class Home extends Component {
   render() {
     return (
       <div className="slider">
-        <h1>How are you feeling today?</h1>
-        <label htmlFor="customRange1">☹    </label>
+        <h1 class="animated fadeIn delay-0.5s">How are you feeling today?</h1>
+        <label class="animated fadeIn delay-0.5s" htmlFor="customRange1">☹    </label>
           <input
+            class="animated fadeIn delay-0.5s"
             type="range"
             onChange={this.handleChange}
             min="0"
             max="4"
             className="custom-range"
             id="customRange1" />
-        <label htmlFor="customRange1">    ☺</label>
+        <label class="animated fadeIn delay-0.5s" htmlFor="customRange1">    ☺</label>
         <MoodSelected mood={this.state.mood} />
       </div>
     );

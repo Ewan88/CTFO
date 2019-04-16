@@ -36,7 +36,7 @@ class EmergencyKittens extends Component {
   render(){
     return(
       <React.Fragment>
-      <div>
+      <div class="animated slideInRight duration-3s">
        <button className="button" onClick={this.openShowKitten}>Emergency Kittens!</button>
       </div>
       <Modal
