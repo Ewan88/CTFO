@@ -1,41 +1,39 @@
 import React, {Component} from 'react';
-import Calendar from 'react-calendar';
+// import Calendar from 'react-calendar';
+import DayPicker from 'react-day-picker';
 import JournalSelected from './JournalSelected';
 import Request from '../helpers/request';
+
+import dayjs from 'dayjs'
+import 'react-day-picker/lib/style.css';
 
 class MoodJournal extends Component {
   constructor(props){
     super(props);
     this.state = {
-      date: new Date(),
-      entries_holder: [],
-      entries: []
-    }
-    this.onChange = this.onChange.bind(this);
+      entries: [],
+      date: null
+    };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount(){
-    console.log(this.state.date);
     const request = new Request();
     request.get('/api/journals')
     .then(data => {
-      this.setState({entries_holder: data._embedded.journals})
+      this.setState({entries: data._embedded.journals})
     })
-    .then(this.loadEntries())
+    .then(() => {
+      this.loadEntries()
+    })
   }
 
   loadEntries(){
-    console.log('loading entries...');
     let a = [];
     let j = 0;
-    if (this.state.entries) {
-      for (let i = 0; i < this.state.entries_holder.length; i++){
-        // console.log(this.state.entries[i].date);
-        // console.log(this.state.entries[i].date instanceof Date);
-        a.push(this.state.entries_holder[i].date)
-        console.log(a[j]);
-        console.log(a[j].constructor.name);
-        console.log(a[j] instanceof String);
+    if (this.state.entries.length > 0) {
+      for (let i = 0; i < this.state.entries.length; i++){
+        a.push(dayjs(this.state.entries[i].date).format('YYYY-M-D'));
         j++;
       }
       return this.loadCalendar(a);
@@ -45,29 +43,33 @@ class MoodJournal extends Component {
   }
 
   loadCalendar(a){
-    console.log(this.state.entries);
     console.log(a);
-    if (this.state.entries) {
+    if (this.state.entries.length > 0) {
       return (
-        <Calendar onChange={this.onChange} view="month"
-        value={this.state.date} />
+        <DayPicker
+          onDayClick={this.handleClick}
+          selectedDays={this.state.date}
+        />
       )
     } else {
       return
     }
   }
 
-  onChange(date){
-    this.setState({date: date});
+  handleClick(day) {
+    console.log(dayjs(day).format('YYYY-MM-DD'));
+    this.setState({date: day });
   }
 
   render(){
     return (
+      <React.Fragment>
       <div>
       <h1>Mood Journal</h1>
       {this.loadEntries()}
-      <JournalSelected entry={this.state.date.toLocaleDateString('en-US')}/>
+      <JournalSelected entry={'help'}/>
       </div>
+      </React.Fragment>
     )
   }
 }

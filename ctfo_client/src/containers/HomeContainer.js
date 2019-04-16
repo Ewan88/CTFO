@@ -11,7 +11,16 @@ class HomeContainer extends Component {
       quotes: [],
       videos: []
     };
+     this.handleCommentPost = this.handleCommentPost.bind(this);
+  }
 
+  handleCommentPost(comment){
+    // const todayDate =
+    // comment.date = todayDate;
+    const request = new Request();
+    request.post('/api/journals', comment).then(() => {
+      window.location = '/journals'
+    })
   }
 
 componentDidMount(){
@@ -28,7 +37,7 @@ componentDidMount(){
       moods: data[0]._embedded.moods,
       images: data[1]._embedded.images,
       quotes: data[2]._embedded.quotes,
-      videos: data[3]._embedded.videos
+      videos: data[3]._embedded.videos,
     })
   })
 }
