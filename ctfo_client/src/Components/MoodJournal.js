@@ -12,7 +12,8 @@ class MoodJournal extends Component {
     super(props);
     this.state = {
       entries: [],
-      date: null
+      date: null,
+      selectedEntry: null
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -59,8 +60,10 @@ class MoodJournal extends Component {
   }
 
   handleClick(day) {
-    console.log(dayjs(day).format('YYYY-MM-DD'));
-    this.setState({date: day });
+    const entry = this.state.entries.find(element => {
+      return dayjs(element.date).format('YYYY-MM-DD') === dayjs(day).format('YYYY-MM-DD')
+    })
+    this.setState({selectedEntry: entry });
   }
 
   render(){
@@ -69,7 +72,7 @@ class MoodJournal extends Component {
       <div>
       <h1>Mood Journal</h1>
       {this.loadEntries()}
-      <JournalSelected entry={this.state.entries[0]}/>
+      <JournalSelected entry={this.state.selectedEntry}/>
       </div>
       </React.Fragment>
     )
