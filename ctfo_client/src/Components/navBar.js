@@ -2,6 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const NavBar = () => (
+  <div>
+  <div class="container" onclick="myFunction(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div>
   <ul>
     <li>
       <Link to="/">Home</Link>
@@ -19,6 +25,7 @@ const NavBar = () => (
       <Link to="/favourites">Favourites</Link>
     </li>
   </ul>
+  </div>
 );
 
 export default NavBar;
