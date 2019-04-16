@@ -8,42 +8,49 @@ class MoodJournal extends Component {
     super(props);
     this.state = {
       date: new Date(),
-      entries_holder: {},
+      entries_holder: [],
       entries: []
     }
     this.onChange = this.onChange.bind(this);
   }
 
   componentDidMount(){
+    console.log(this.state.date);
     const request = new Request();
     request.get('/api/journals')
     .then(data => {
-      this.setState({entries: data._embedded.journals})
+      this.setState({entries_holder: data._embedded.journals})
     })
-    // .then(this.loadEntries())
-    .then(this.loadCalendar())
+    .then(this.loadEntries())
   }
 
   loadEntries(){
     console.log('loading entries...');
     let a = [];
+    let j = 0;
     if (this.state.entries) {
-      for (let i = 0; i < this.state.entries.length; i++){
-        console.log(this.state.entries[i].date);
-        a.push(this.state.entries[i].date)
+      for (let i = 0; i < this.state.entries_holder.length; i++){
+        // console.log(this.state.entries[i].date);
+        // console.log(this.state.entries[i].date instanceof Date);
+        a.push(this.state.entries_holder[i].date)
+        console.log(a[j]);
+        console.log(a[j].constructor.name);
+        console.log(a[j] instanceof String);
+        j++;
       }
-      return a;
+      return this.loadCalendar(a);
     } else {
-      return new Date();
+      return this.loadCalendar(a);
     }
   }
 
-  loadCalendar(){
+  loadCalendar(a){
     console.log(this.state.entries);
+    console.log(a);
     if (this.state.entries) {
       return (
         <Calendar onChange={this.onChange} view="month"
-        value={this.loadEntries()} />
+        value={this.state.date} />
       )
     } else {
       return
@@ -58,7 +65,7 @@ class MoodJournal extends Component {
     return (
       <div>
       <h1>Mood Journal</h1>
-      {this.loadCalendar()}
+      {this.loadEntries()}
       <JournalSelected entry={this.state.date.toLocaleDateString('en-US')}/>
       </div>
     )
