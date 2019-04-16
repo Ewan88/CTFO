@@ -32,7 +32,7 @@ class EnergiseMe extends Component {
   render(){
     return(
       <React.Fragment>
-        <div>
+        <div class="animated slideInRight duration-3s">
           <button className="button" onClick={this.openShowEnergy}>Energise Me!</button>
         </div>
         <VideoPlayer videos={this.state.videos}/>

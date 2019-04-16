@@ -37,7 +37,7 @@ class AdviseMe extends Component {
   render(){
     return(
       <React.Fragment>
-      <div>
+      <div class="animated slideInLeft duration-3s">
        <button className="button" onClick={this.openShowAdvice}>Advise Me!</button>
       </div>
       <Modal

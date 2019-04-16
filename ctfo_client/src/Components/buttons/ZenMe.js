@@ -28,7 +28,7 @@ class ZenMe extends Component {
     console.log(this.state.videos);
     return(
       <React.Fragment>
-        <div>
+        <div class="animated slideInRight duration-3s">
           <button className="button" onClick={this.openShowZen}>Zen Me!</button>
         </div>
         <VideoPlayer videos={this.state.videos}/>
