@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Home from "../Components/Home";
-import CommentForm from "../Components/CommentForm"
 import Request from "../helpers/request";
 
 class HomeContainer extends Component {
@@ -38,7 +37,7 @@ componentDidMount(){
       moods: data[0]._embedded.moods,
       images: data[1]._embedded.images,
       quotes: data[2]._embedded.quotes,
-      videos: data[3]._embedded.videos
+      videos: data[3]._embedded.videos,
     })
   })
 }
@@ -47,7 +46,6 @@ componentDidMount(){
     return(
       <React.Fragment>
        <Home moods={this.state.moods}></Home>
-       <CommentForm comments={this.props.comments} handleCommentPost={this.handleCommentPost}/>
       </React.Fragment>
     )
   }

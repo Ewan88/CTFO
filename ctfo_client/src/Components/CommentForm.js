@@ -1,8 +1,9 @@
 import React from 'react';
+import Request from "../helpers/request";
+
 import dayjs from 'dayjs';
 
 const CommentForm = (props) => {
-
   function handleSubmit(event){
     event.preventDefault();
     const comment = {
@@ -10,7 +11,14 @@ const CommentForm = (props) => {
       "comment": event.target.comment.value,
       "endMood": event.target.endMood.value
     }
-    props.handleCommentPost(comment);
+    handleCommentPost(comment);
+  }
+
+  function handleCommentPost(comment){
+    const request = new Request();
+    request.post('/api/journals', comment).then(() => {
+      window.location = '/journals'
+    })
   }
 
  return (
