@@ -29,27 +29,29 @@ class MoodJournal extends Component {
   }
 
   loadEntries(){
-    let a = [];
+    let dates = [];
     let j = 0;
     if (this.state.entries.length > 0) {
       for (let i = 0; i < this.state.entries.length; i++){
-        a.push(dayjs(this.state.entries[i].date).format('YYYY-M-D'));
+        dates.push(new Date(dayjs(this.state.entries[i].date).format('YYYY-M-D')));
         j++;
       }
-      return this.loadCalendar(a);
+      return this.loadCalendar(dates);
     } else {
-      return this.loadCalendar(a);
+      return this.loadCalendar(dates);
     }
   }
 
-  loadCalendar(a){
-    console.log(a);
+  loadCalendar(dates){
+    console.log(new Date("2019-04-17"));
+    // console.log(dates);
     if (this.state.entries.length > 0) {
       return (
         <DayPicker
           onDayClick={this.handleClick}
-          selectedDays={this.state.date}
-        />
+          selectedDays={dates}
+        >
+        </DayPicker>
       )
     } else {
       return
@@ -60,6 +62,17 @@ class MoodJournal extends Component {
     console.log(dayjs(day).format('YYYY-MM-DD'));
     this.setState({date: day });
   }
+
+  // loadDays(dates){
+  //   if (dates.length === 0) {
+  //     return
+  //   } else {
+  //     const journalDates = dates.map((day) => {
+  //       return <Day modifier="selected" day={day} />
+  //     })
+  //     return {journalDates}
+  //   }
+  // }
 
   render(){
     return (
