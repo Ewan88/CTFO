@@ -6,6 +6,11 @@ class VideoPlayer extends Component {
   constructor(props){
     super(props);
   }
+  
+
+  closeModal() {
+  this.setState({modalIsOpen: false});
+  }
 
   render(){
     if(!this.props.videos){

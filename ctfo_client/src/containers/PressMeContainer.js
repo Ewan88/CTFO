@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import QuoteMe from '../Components/QuoteMe';
-import EmergencyKittens from '../Components/EmergencyKittens';
-import ZenMe from '../Components/ZenMe';
-import AdviseMe from '../Components/AdviseMe';
-import RageMe from '../Components/RageMe';
-import EnergiseMe from '../Components/EnergiseMe';
+import QuoteMe from '../Components/buttons/QuoteMe';
+import EmergencyKittens from '../Components/buttons/EmergencyKittens';
+import ZenMe from '../Components/buttons/ZenMe';
+import AdviseMe from '../Components/buttons/AdviseMe';
+import RageMe from '../Components/buttons/RageMe';
+import EnergiseMe from '../Components/buttons/EnergiseMe';
 
 class PressMeContainer extends Component {
   render(){

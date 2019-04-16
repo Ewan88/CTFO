@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Modal from 'react-modal';
-import VideoPlayer from './videoPlayer.js'
+import VideoPlayer from '../VideoPlayer.js'
 
 class ZenMe extends Component {
   constructor(props){
@@ -10,7 +10,6 @@ class ZenMe extends Component {
         modalIsOpen: false
       };
       this.getZen = this.getZen.bind(this);
-      this.closeModal = this.closeModal.bind(this);
       this.openShowZen = this.openShowZen.bind(this);
   }
 
@@ -19,10 +18,6 @@ class ZenMe extends Component {
     fetch(url)
     .then(res => res.json())
     .then(data => this.setState({videos: data._embedded.videos}))
-  }
-
-  closeModal() {
-  this.setState({modalIsOpen: false});
   }
 
   openShowZen(){
