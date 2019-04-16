@@ -17,9 +17,8 @@ class PressMeContainer extends Component {
     <RageMe />
     <EnergiseMe />
     </React.Fragment>
-  )
+   )
   }
-
 }
 
 
