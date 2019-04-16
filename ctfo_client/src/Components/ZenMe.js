@@ -5,7 +5,7 @@ class ZenMe extends Component {
   constructor(props){
     super(props);
       this.state = {
-        zen: '',
+        videos: [],
         modalIsOpen: false
       };
       this.getZen = this.getZen.bind(this);
@@ -15,10 +15,10 @@ class ZenMe extends Component {
   }
 
   getZen(){
-    const url = 'https://api.adviceslip.com/advice'
+    const url = 'http://localhost:8080/api/moods/7'
     fetch(url)
     .then(res => res.json())
-    .then(data => this.setState({zen: data.zen}))
+    .then(data => this.setState({videos: data}))
   }
 
   openModal() {
@@ -34,6 +34,11 @@ class ZenMe extends Component {
     this.getZen();
   }
 
+  handleVideoSelected(index){
+    const selectedVideo = this.state.videos[index];
+    this.setState({selectedVideo: selectedVideo})
+  }
+
   render(){
     return(
       <React.Fragment>
@@ -47,7 +52,7 @@ class ZenMe extends Component {
        contentLabel="Example Modal"
        ariaHideApp={false}
        >
-       <p>{this.state.zen}</p>
+       <iframe width="560" height="315" src={this.state.videos[0]} frameBorder="0" allowFullScreen></iframe>
        <button onClick={this.closeModal}>close</button>
       </Modal>
       </React.Fragment>

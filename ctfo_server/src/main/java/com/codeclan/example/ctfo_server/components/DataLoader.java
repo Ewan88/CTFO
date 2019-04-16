@@ -386,6 +386,5 @@ public class DataLoader implements ApplicationRunner {
         );
         videoRepository.save(videoEnergise4);
 
-
     }
 }
