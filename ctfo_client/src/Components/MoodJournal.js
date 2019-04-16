@@ -2,12 +2,13 @@ import React, {Component} from 'react';
 import Calendar from 'react-calendar';
 import JournalSelected from './JournalSelected';
 import Request from '../helpers/request';
+import dayjs from 'dayjs'
 
 class MoodJournal extends Component {
   constructor(props){
     super(props);
     this.state = {
-      date: new Date(),
+      date: new dayjs(),
       entries: []
     }
     this.onChange = this.onChange.bind(this);
@@ -19,24 +20,20 @@ class MoodJournal extends Component {
     .then(data => {
       this.setState({entries: data._embedded.journals})
     })
-    .then(this.loadEntries())
+    .then(() => {
+      this.loadEntries()
+    })
   }
 
   loadEntries(){
     console.log('loading entries...');
-    console.log(this.state.entries);
     let a = [];
     let j = 0;
-    if (this.state.entries) {
+    if (this.state.entries.length > 0) {
       for (let i = 0; i < this.state.entries.length; i++){
-        // console.log(this.state.entries[i].date);
-        // console.log(this.state.entries[i].date instanceof Date);
-        a.push(this.state.entries[i].date);
+        a.push(dayjs(this.state.entries[i].date).format('YYYY-M-D'));
         console.log(a[j]);
-        console.log(a[j].constructor.name);
-        console.log(a[j] instanceof String);
         j++;
-        console.log(a);
       }
       return this.loadCalendar(a);
     } else {
@@ -45,10 +42,11 @@ class MoodJournal extends Component {
   }
 
   loadCalendar(a){
-    if (this.state.entries) {
+    console.log('rendering calendar...');
+    if (this.state.entries.length > 0) {
       return (
         <Calendar onChange={this.onChange} view="month"
-        value={this.state.entries} />
+        value={a} />
       )
     } else {
       return
@@ -64,7 +62,7 @@ class MoodJournal extends Component {
       <div>
       <h1>Mood Journal</h1>
       {this.loadEntries()}
-      <JournalSelected entry={this.state.date.toLocaleDateString('en-US')}/>
+      <JournalSelected entry={'help'}/>
       </div>
     )
   }
