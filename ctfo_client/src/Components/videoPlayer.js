@@ -10,10 +10,15 @@ class VideoPlayer extends Component {
       modalIsOpen: true
     };
     this.closeModal = this.closeModal.bind(this);
+    this.randomNum = this.randomNum.bind(this);
   }
 
   closeModal() {
   this.setState({modalIsOpen: false});
+  }
+
+  randomNum(length){
+    return Math.floor(Math.random()*length)
   }
 
   render(){
@@ -27,7 +32,7 @@ class VideoPlayer extends Component {
        onRequestClose={this.closeModal}
        contentLabel="Example Modal"
        ariaHideApp={false}>
-       <iframe width="560" height="315" src={this.props.videos[0].videoUrl} frameBorder="0" allowFullScreen></iframe>
+       <iframe width="560" height="315" src={this.props.videos[this.randomNum(this.props.videos.length)].videoUrl} frameBorder="0" allowFullScreen></iframe>
        <button onClick={this.closeModal}>close</button>
       </Modal>
     )

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Home from "../Components/Home";
-import Request from "../helpers/request";
 
 class HomeContainer extends Component {
   constructor(props){
@@ -12,15 +11,6 @@ class HomeContainer extends Component {
       videos: []
     };
      this.handleCommentPost = this.handleCommentPost.bind(this);
-  }
-
-  handleCommentPost(comment){
-    // const todayDate =
-    // comment.date = todayDate;
-    const request = new Request();
-    request.post('/api/journals', comment).then(() => {
-      window.location = '/journals'
-    })
   }
 
 componentDidMount(){
