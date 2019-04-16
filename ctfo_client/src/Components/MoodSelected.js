@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentForm from "./CommentForm"
 
 const MoodSelected = ({mood}) => {
   let index = null
@@ -19,6 +20,7 @@ const MoodSelected = ({mood}) => {
       <p>{mood.quotes[index].author}</p>
       <img width="415" height="415" src={mood.images[randomNum(mood.images.length)].imageUrl} alt=""></img>
       <iframe width="560" height="315" src={mood.videos[randomNum(mood.videos.length)].videoUrl} frameBorder="0" allowFullScreen></iframe>
+      <CommentForm />
     </div>
   )
 
