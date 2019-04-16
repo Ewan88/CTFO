@@ -1,17 +1,20 @@
 import React, {Component} from 'react';
-import Calendar from 'react-calendar';
+// import Calendar from 'react-calendar';
+import DayPicker from 'react-day-picker';
 import JournalSelected from './JournalSelected';
 import Request from '../helpers/request';
+
 import dayjs from 'dayjs'
+import 'react-day-picker/lib/style.css';
 
 class MoodJournal extends Component {
   constructor(props){
     super(props);
     this.state = {
-      date: new dayjs(),
-      entries: []
-    }
-    this.onChange = this.onChange.bind(this);
+      entries: [],
+      date: null
+    };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount(){
@@ -26,13 +29,11 @@ class MoodJournal extends Component {
   }
 
   loadEntries(){
-    console.log('loading entries...');
     let a = [];
     let j = 0;
     if (this.state.entries.length > 0) {
       for (let i = 0; i < this.state.entries.length; i++){
         a.push(dayjs(this.state.entries[i].date).format('YYYY-M-D'));
-        console.log(a[j]);
         j++;
       }
       return this.loadCalendar(a);
@@ -42,28 +43,33 @@ class MoodJournal extends Component {
   }
 
   loadCalendar(a){
-    console.log('rendering calendar...');
+    console.log(a);
     if (this.state.entries.length > 0) {
       return (
-        <Calendar onChange={this.onChange} view="month"
-        value={a} />
+        <DayPicker
+          onDayClick={this.handleClick}
+          selectedDays={this.state.date}
+        />
       )
     } else {
       return
     }
   }
 
-  onChange(date){
-    this.setState({date: date});
+  handleClick(day) {
+    console.log(dayjs(day).format('YYYY-MM-DD'));
+    this.setState({date: day });
   }
 
   render(){
     return (
+      <React.Fragment>
       <div>
       <h1>Mood Journal</h1>
       {this.loadEntries()}
       <JournalSelected entry={'help'}/>
       </div>
+      </React.Fragment>
     )
   }
 }

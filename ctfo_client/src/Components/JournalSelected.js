@@ -1,7 +1,6 @@
 import React from 'react';
 
 const JournalSelected = ({entry}) => {
-
   if(!entry){
     return null
   }
