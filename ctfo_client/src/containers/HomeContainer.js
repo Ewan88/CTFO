@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Home from "../Components/Home";
+import CommentForm from "../Components/CommentForm"
 import Request from "../helpers/request";
 
 class HomeContainer extends Component {
@@ -11,7 +12,16 @@ class HomeContainer extends Component {
       quotes: [],
       videos: []
     };
+     this.handleCommentPost = this.handleCommentPost.bind(this);
+  }
 
+  handleCommentPost(comment){
+    // const todayDate =
+    // comment.date = todayDate;
+    const request = new Request();
+    request.post('/api/journals', comment).then(() => {
+      window.location = '/journals'
+    })
   }
 
 componentDidMount(){
@@ -37,6 +47,7 @@ componentDidMount(){
     return(
       <React.Fragment>
        <Home moods={this.state.moods}></Home>
+       <CommentForm comments={this.props.comments} handleCommentPost={this.handleCommentPost}/>
       </React.Fragment>
     )
   }

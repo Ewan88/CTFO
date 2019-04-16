@@ -32,11 +32,11 @@ class MoodJournal extends Component {
       for (let i = 0; i < this.state.entries_holder.length; i++){
         // console.log(this.state.entries[i].date);
         // console.log(this.state.entries[i].date instanceof Date);
-        a.push(this.state.entries_holder[i].date)
-        console.log(a[j]);
-        console.log(a[j].constructor.name);
-        console.log(a[j] instanceof String);
-        j++;
+        // a.push(this.state.entries_holder[i].date)
+        // console.log(a[j]);
+        // console.log(a[j].constructor.name);
+        // console.log(a[j] instanceof String);
+        // j++;
       }
       return this.loadCalendar(a);
     } else {
