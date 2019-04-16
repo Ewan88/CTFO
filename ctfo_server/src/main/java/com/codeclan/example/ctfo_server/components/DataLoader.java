@@ -282,5 +282,124 @@ public class DataLoader implements ApplicationRunner {
                 "test mood 3"
         );
         journalRepository.save(journalEntry3);
+
+//      RAGE BUTTON
+
+        Mood anger = new Mood("Anger");
+        moodRepository.save(anger);
+
+        Video videoRage1 = new Video(
+                "https://www.youtube.com/embed/MQsCfGLrM_0",
+                anger
+        );
+        videoRepository.save(videoRage1);
+
+        Video videoRage2 = new Video(
+                "https://www.youtube.com/embed/pvxaCKyzwXU?start=16",
+                anger
+        );
+        videoRepository.save(videoRage2);
+
+        Video videoRage3 = new Video(
+                "https://www.youtube.com/embed/Lei58UXZzUQ",
+                anger
+        );
+        videoRepository.save(videoRage3);
+
+        Video videoRage4 = new Video(
+                "https://www.youtube.com/embed/ymTseMd56x4",
+                anger
+        );
+        videoRepository.save(videoRage4);
+
+        Image rageImage1 = new Image(
+                "https://bloximages.newyork1.vip.townnews.com/omaha.com/content/tncms/assets/v3/editorial/9/da/9da7d8f9-5d38-5f76-a374-166d56dab02f/5332005fec894.image.jpg"
+        );
+        imageRepository.save(rageImage1);
+
+        Image rageImage2 = new Image(
+                "https://i.ytimg.com/vi/SUgJJO7Flqg/maxresdefault.jpg"
+        );
+        imageRepository.save(rageImage2);
+
+        Image rageImage3 = new Image(
+                "http://www.abc.net.au/reslib/201502/r1385324_19654588.jpg"
+        );
+        imageRepository.save(rageImage3);
+
+        Image rageImage4 = new Image(
+                "http://www.angryzenmaster.com/wp-content/uploads/2008/04/angryspidey.jpg"
+        );
+        imageRepository.save(rageImage4);
+
+        depressed.addImage(rageImage1);
+        depressed.addImage(rageImage2);
+        depressed.addImage(rageImage3);
+        depressed.addImage(rageImage4);
+        moodRepository.save(anger);
+
+//      ZEN BUTTON
+
+        Mood zen = new Mood("Zen");
+        moodRepository.save(zen);
+
+        Video videoZen1 = new Video(
+                "https://www.youtube.com/embed/6GxNJlmzqz4",
+                zen
+        );
+        videoRepository.save(videoZen1);
+
+        Video videoZen2 = new Video(
+                "https://www.youtube.com/embed/QKSFDPEGUZo",
+                zen
+        );
+        videoRepository.save(videoZen2);
+
+        Video videoZen3 = new Video(
+                "https://www.youtube.com/embed/BpbJ0lHFLLw",
+                zen
+        );
+        videoRepository.save(videoZen3);
+
+        Video videoZen4 = new Video(
+                "https://www.youtube.com/embed/l_YSyUpf8Ec",
+                zen
+        );
+        videoRepository.save(videoZen4);
+
+        Video videoZen5 = new Video(
+                "https://www.youtube.com/embed/Ir4-vRunIe8",
+                zen
+        );
+        videoRepository.save(videoZen5);
+
+//      ENERGISE BUTTON
+
+        Mood energize = new Mood("Energize");
+        moodRepository.save(energize);
+
+        Video videoEnergise1 = new Video(
+                "https://www.youtube.com/embed/W81ZT1njdmk",
+                energize
+        );
+        videoRepository.save(videoEnergise1);
+
+        Video videoEnergise2 = new Video(
+                "https://www.youtube.com/embed/-cwyrLUgNzA",
+                energize
+        );
+        videoRepository.save(videoEnergise2);
+
+        Video videoEnergise3 = new Video(
+                "https://www.youtube.com/embed/zVlF6U0eZEw",
+                energize
+        );
+        videoRepository.save(videoEnergise3);
+
+        Video videoEnergise4 = new Video(
+                "https://www.youtube.com/embed/4ugy0hEQ268",
+                energize
+        );
+        videoRepository.save(videoEnergise4);
     }
 }
