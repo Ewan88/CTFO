@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Home from "../Components/Home";
+import Request from "../helpers/request";
 
 class HomeContainer extends Component {
   constructor(props){
@@ -12,6 +13,13 @@ class HomeContainer extends Component {
     };
      this.handleCommentPost = this.handleCommentPost.bind(this);
   }
+
+  handleCommentPost(comment){
+   const request = new Request();
+   request.post('/api/journals', comment).then(() => {
+     window.location = '/journals'
+   })
+ }
 
 componentDidMount(){
   const request = new Request()
