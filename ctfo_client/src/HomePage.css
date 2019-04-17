@@ -1,4 +1,32 @@
+div {
+
+}
+
 h1 {
-  font-size: 40px;
+  font-size: 35px;
+  margin-top: 100px;
+}
+
+label {
+
+}
+
+input {
+
+}
+
+.smiley1 {
+  color: #59d3f2;
+}
+
+.smiley2 {
+  color: #00ff08;
+}
+
+.slider {
+  background-color: #def2f7;
+  border-radius: 30px;
+  margin-left: 250px;
+  margin-right: 250px;
   
 }

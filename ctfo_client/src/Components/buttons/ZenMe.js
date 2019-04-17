@@ -11,6 +11,7 @@ class ZenMe extends Component {
       };
       this.getZen = this.getZen.bind(this);
       this.openShowZen = this.openShowZen.bind(this);
+      this.openModal = this.openModal.bind(this);
   }
 
   getZen(){
@@ -20,7 +21,12 @@ class ZenMe extends Component {
     .then(data => this.setState({videos: data._embedded.videos}))
   }
 
+  openModal() {
+  this.setState({modalIsOpen: true});
+  }
+
   openShowZen(){
+    this.openModal();
     this.getZen();
   }
 
