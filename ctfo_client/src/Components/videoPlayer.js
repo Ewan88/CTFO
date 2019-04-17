@@ -4,15 +4,22 @@ import Modal from 'react-modal';
 class VideoPlayer extends Component {
   constructor(props){
     super(props);
-    this.state = {
-      modalIsOpen: true
-    };
+    // this.state = {
+    //   modalIsOpen: true
+    // };
     this.closeModal = this.closeModal.bind(this);
     this.randomNum = this.randomNum.bind(this);
+    this.openModal = this.openModal.bind(this);
+  }
+
+  openModal() {
+  this.setState({modalIsOpen: true});
   }
 
   closeModal() {
+      this.props.closeModal();
   this.setState({modalIsOpen: false});
+
   }
 
   randomNum(length){
@@ -26,7 +33,7 @@ class VideoPlayer extends Component {
     return(
       <Modal
        className="modal-box"
-       isOpen={this.state.modalIsOpen}
+       isOpen={this.props.status}
        onRequestClose={this.closeModal}
        contentLabel="Example Modal"
        ariaHideApp={false}>
