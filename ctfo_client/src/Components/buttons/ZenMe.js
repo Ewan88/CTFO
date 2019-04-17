@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Modal from 'react-modal';
-import VideoPlayer from '../VideoPlayer.js'
+import VideoPlayer from '../videoPlayer';
 
 class ZenMe extends Component {
   constructor(props){
