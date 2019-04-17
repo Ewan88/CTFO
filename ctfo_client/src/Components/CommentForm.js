@@ -24,9 +24,9 @@ const CommentForm = (props) => {
  return (
   <div >
   <form onSubmit={handleSubmit}>
-    <textarea className="comment-form" type="text" placeholder="How do you feel now?" name="comment"/>
+    <textarea className="comment-form" type="text" placeholder="How do you feel now?" name="comment" required/>
       <br></br>
-    <input className="end-mood" type="text" placeholder="Mood now?" name="endMood"/>
+    <input className="end-mood" type="text" placeholder="Mood now?" name="endMood" required/>
       <br></br>
     <button className="submit-button" type="submit">Save to Journal</button>
   </form>

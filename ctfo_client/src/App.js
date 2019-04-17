@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MainContainer from './containers/MainContainer'
 import './App.css';
-import './HomePage.css';
+import './Components/styles/HomePage.css';
 import './Components/styles/buttons.css'
 import './Components/styles/moodJournal.css'
 
