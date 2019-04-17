@@ -36,12 +36,6 @@ h1 {
   height: auto;
 }
 
-@media only screen
-  and (min-device-width: 375px)
-  and (max-device-width: 667px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-}
-
 /* MoodSelected */
 
 .mood-selected {
@@ -109,4 +103,38 @@ h1 {
   border-radius: 5px;
   font-size: 12px;
   width: auto;
+}
+
+/* mediaQueries */
+
+/* iphone5 */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px) {
+
+  .App {
+    text-align: left;
+    padding: 10px;
+    height: 175px;
+  }
+
+  .slider {
+    text-align: center;
+    margin: 10px;
+  }
+
+  .custom-range {
+    size: 100px;
+  }
+
+  h1 {
+    font-size: 20px;
+    margin-top: 30px;
+    padding: 10px;
+    font-family: 'Varela Round', sans-serif;
+    font-style: linear-gradient(#b5f4fc, #d1d1d1);
+    width: auto;
+    height: auto;
+    text-align: center;
+  }
 }
