@@ -108,6 +108,16 @@ h1 {
 }
 
 /* mediaQueries */
+@media only screen
+and (min-width: 150px)
+and (max-width: 1199px) {
+
+  .slider{
+    text-align: center;
+    margin: 10px;
+    width: auto;
+  }
+}
 
 /* phones */
 @media only screen
