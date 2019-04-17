@@ -6,7 +6,8 @@ class Home extends Component {
     super(props);
     this.state = {
       mood_id: 2,
-      mood: null
+      mood: null,
+      slideNumber: 2
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSlide = this.handleSlide.bind(this);
@@ -15,6 +16,7 @@ class Home extends Component {
   handleChange(event){
     console.log(event.target.value);
     this.setState({mood: this.props.moods[event.target.value]})
+    this.setState({slideNumber: event.target.value})
   }
 
   handleSlide(){
@@ -31,6 +33,7 @@ class Home extends Component {
             onChange={this.handleChange}
             min="0"
             max="4"
+            value={this.state.slideNumber}
             className="custom-range"
             id="customRange1" />
         <label className="smiley2 animated fadeIn delay-0.5s" htmlFor="customRange2">    ☺</label>
