@@ -24,10 +24,9 @@ class Home extends Component {
   render() {
     return (
       <div className="slider">
-        <h1 className="animated fadeIn delay-0.5s">How are you feeling today?</h1>
+        <h1 className="animated heartBeat delay-1.0s">How are you feeling today?</h1>
         <label className="smiley1 animated fadeIn delay-0.5s" htmlFor="customRange1">☹    </label>
           <input
-            className="animated fadeIn delay-0.5s"
             type="range"
             onChange={this.handleChange}
             min="0"

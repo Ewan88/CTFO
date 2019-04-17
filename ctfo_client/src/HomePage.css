@@ -1,32 +1,29 @@
-div {
-
-}
-
 h1 {
   font-size: 35px;
-  margin-top: 100px;
-}
-
-label {
-
-}
-
-input {
-
+  margin-top: 70px;
+  padding: 15px;
+  font-family: 'Varela Round', sans-serif;
 }
 
 .smiley1 {
-  color: #59d3f2;
+  animation-duration: 5s;
 }
 
 .smiley2 {
-  color: #00ff08;
+  animation-duration: 5s;
 }
 
 .slider {
-  background-color: #def2f7;
-  border-radius: 30px;
+  background-image: linear-gradient(#b5f4fc, #e8fcff);
+  border-radius: 20px;
   margin-left: 250px;
   margin-right: 250px;
-  
+  padding-bottom: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
 }

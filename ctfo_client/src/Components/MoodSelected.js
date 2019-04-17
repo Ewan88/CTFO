@@ -15,9 +15,9 @@ const MoodSelected = ({mood}) => {
 
   return(
     <div className="mood-selected">
-      <p>{mood.name}</p>
+
       <p>{mood.quotes[index].text}</p>
-      <p>{mood.quotes[index].author}</p>
+      <p>-{mood.quotes[index].author}</p>
       <img width="415" height="415" src={mood.images[randomNum(mood.images.length)].imageUrl} alt=""></img>
       <iframe title="mood-video" width="560" height="315" src={mood.videos[randomNum(mood.videos.length)].videoUrl} frameBorder="0" allowFullScreen></iframe>
       <CommentForm />
