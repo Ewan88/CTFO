@@ -9,14 +9,20 @@ h1 {
   padding: 10px;
   font-family: 'Varela Round', sans-serif;
   font-style: linear-gradient(#b5f4fc, #d1d1d1);
+  width: auto;
+  height: auto;
 }
 
 .smiley1 {
   animation-duration: 5s;
+  width: auto;
+  height: auto;
 }
 
 .smiley2 {
   animation-duration: 5s;
+  width: auto;
+  height: auto;
 }
 
 .slider {
@@ -25,7 +31,9 @@ h1 {
   margin-left: 250px;
   margin-right: 250px;
   padding-bottom: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: auto;
+  height: auto;
 }
 
 @media only screen
@@ -35,6 +43,10 @@ h1 {
 }
 
 /* MoodSelected */
+
+.mood-selected {
+  padding: 10px;
+}
 
 .quote-text {
   font-style: italic;
@@ -52,21 +64,39 @@ h1 {
 
 .yoga-image {
   border-radius: 15px;
+  width: 100%;
+  height: auto;
+}
+
+.video-wrapper {
+  position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 25px;
+	height: 0;
+}
+
+.inspire-video {
+  position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 /* commentForm */
 
 .comment-form {
-  height: 75px;
-  width: 300px;
+  height: auto;
+  width: 100%;
   border-radius: 5px;
   border-style: solid;
   border-color: #cecccc;
   font-size: 12px;
+  margin-top: 10px;
 }
 
 .end-mood {
-  width: 300px;
+  width: auto;
   border-radius: 5px;
   border-style: solid;
   margin-top: 5px;
@@ -77,6 +107,6 @@ h1 {
 
 .submit-button {
   border-radius: 5px;
-  width: 105px;
   font-size: 12px;
+  width: auto;
 }
