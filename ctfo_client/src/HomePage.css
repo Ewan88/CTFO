@@ -27,3 +27,16 @@ h1 {
   and (max-device-width: 667px)
   and (-webkit-min-device-pixel-ratio: 2) {
 }
+
+/* MoodSelected */
+
+.quote-text {
+  font-style: italic;
+  padding: 5px;
+  animation-duration: 3s;
+}
+
+.quote-author {
+  font-weight: bold;
+  animation-duration: 3s;
+}
