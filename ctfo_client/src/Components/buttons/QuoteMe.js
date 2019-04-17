@@ -5,7 +5,7 @@ class QuoteMe extends Component {
   constructor(props){
     super(props);
     this.state = {
-      quote: '',
+      quote: {},
       modalIsOpen: false
     };
 
@@ -16,10 +16,11 @@ class QuoteMe extends Component {
   }
 
   getQuote(){
-    const url = 'http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en'
+    const url = 'https://quota.glitch.me/random'
     fetch(url)
     .then(res => res.json())
-    .then(data => this.setState({quote: data.quoteText}));
+    .then(data => this.setState({quote: data}))
+
   }
 
   openModal() {
@@ -48,7 +49,8 @@ class QuoteMe extends Component {
        contentLabel="Example Modal"
        ariaHideApp={false}
        >
-       <p>{this.state.quote}</p>
+       <p>{this.state.quote.quoteText}</p>
+       <p>- {this.state.quote.quoteAuthor}</p>
        <button onClick={this.closeModal}>close</button>
       </Modal>
        </React.Fragment>
