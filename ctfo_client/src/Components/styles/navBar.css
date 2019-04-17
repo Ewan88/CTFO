@@ -3,6 +3,7 @@
   padding: 0;
   display: inline-flex;
   width: auto;
+  
 }
 
 ul {
@@ -12,7 +13,9 @@ ul {
   flex-direction: row;
   justify-content: space-between;
   list-style: none;
-  background-color: purple;
+  border-radius: 10px;
+  background-image: linear-gradient(#b97fe0, #e8fcff);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 li {
@@ -22,7 +25,8 @@ li {
 a {
   font-size: large;
   text-decoration: none;
-  color: white;
+  color: black;
+  font-family: 'Varela Round', sans-serif;
 }
 
 a:hover {
