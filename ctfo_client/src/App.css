@@ -10,13 +10,3 @@
 /* buttons */
 
 /* modal */
-
-.modal-box {
-  display: flex;
-  align-items: center;
-  width: 50%;
-  height: auto;
-  background: #8502fd;
-  border-radius: 8px;
-  color: white;
-}
