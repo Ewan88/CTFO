@@ -1,39 +1,39 @@
-import React, {Component} from 'react';
-import GoogleMapReact from 'google-map-react';
+import React from 'react';
+import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl";
+import './styles/map.css';
+import mapboxgl from 'mapbox-gl';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const Map = () => {
 
-class Map extends Component {
+  // function _locateUser() {
+  //   // https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation
+  //   navigator.geolocation.getCurrentPosition(position => {
+  //     this.updateViewport({
+  //       longitude: position.coords.longitude,
+  //       latitude: position.coords.latitude
+  //     });
+  //   });
+  // }
 
-  static defaultProps = {
-      center: {
-        lat: 55.86,
-        lng: -4.25
-      },
-      zoom: 11
-    };
+  const Map = ReactMapboxGl({
+    accessToken: "pk.eyJ1Ijoicm9kZ2VyLXRoZS1zaHJ1YmJlciIsImEiOiJjanNqZ3gxNnoyYXFyNDN0YnV2dGVjeTl1In0.7YUhBJNDpqGmjW8iLzpgaQ"
+  })
+  //
+  // var nav = new mapboxgl.NavigationControl();
+  // map.addControl(nav, 'bottom-left');
 
-    render() {
-      return (
-        <div style={{ height: '100vh', width: '100%' }}>
-          <GoogleMapReact
-          hostname={"maps.googleapis.com"}
-          pathname={"/maps/api/js"}
-          query={{ key: 'YOUR_API_KEY', libraries: 'geometry,drawing,places' }}
-            defaultCenter={this.props.center}
-            defaultZoom={this.props.zoom}
-            yesIWantToUseGoogleMapApiInternals
-          >
-            <AnyReactComponent
-              lat={55.865351}
-              lng={-4.257576}
-              text="ME"
-            />
-          </GoogleMapReact>
-        </div>
-      );
-    }
-
+  return (
+    <div id="map">
+    <Map
+    style="mapbox://styles/mapbox/satellite-v9"
+    center={[ -4.251433, 55.860916 ]}
+    containerStyle={{
+      height: "100vh",
+      width: "80vw"
+    }}>
+    </Map>
+    </div>
+  )
 }
 
 export default Map;
