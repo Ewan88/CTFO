@@ -22,11 +22,13 @@ const CommentForm = (props) => {
   }
 
  return (
-  <div>
+  <div >
   <form onSubmit={handleSubmit}>
-    <input type="text" placeholder="Comment" name="comment"/>
-    <input type="text" placeholder="End Mood" name="endMood"/>
-     <button type="submit">Save</button>
+    <textarea className="comment-form" type="text" placeholder="How do you feel now?" name="comment"/>
+      <br></br>
+    <input className="end-mood" type="text" placeholder="Mood now?" name="endMood"/>
+      <br></br>
+    <button className="submit-button" type="submit">Save</button>
   </form>
   </div>
 )

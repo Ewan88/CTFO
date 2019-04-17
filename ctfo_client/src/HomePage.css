@@ -1,8 +1,14 @@
+* {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 h1 {
   font-size: 35px;
-  margin-top: 70px;
-  padding: 15px;
+  margin-top: 30px;
+  padding: 10px;
   font-family: 'Varela Round', sans-serif;
+  font-style: linear-gradient(#b5f4fc, #d1d1d1);
 }
 
 .smiley1 {
@@ -39,4 +45,35 @@ h1 {
 .quote-author {
   font-weight: bold;
   animation-duration: 3s;
+}
+
+.yoga-image {
+  border-radius: 15px;
+}
+
+/* commentForm */
+
+.comment-form {
+  height: 75px;
+  width: 300px;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #f4f4f4;
+  font-size: 12px;
+}
+
+.end-mood {
+  width: 300px;
+  border-radius: 5px;
+  border-style: solid;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-color: #f4f4f4;
+  font-size: 12px;
+}
+
+.submit-button {
+  border-radius: 5px;
+  width: 80px;
+  font-size: 12px;
 }
