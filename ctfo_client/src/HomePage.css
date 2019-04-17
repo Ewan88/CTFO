@@ -39,11 +39,14 @@ h1 {
 .quote-text {
   font-style: italic;
   padding: 5px;
+  padding-bottom: 0px;
   animation-duration: 3s;
+  font-weight: lighter;
 }
 
 .quote-author {
-  font-weight: bold;
+  font-weight: 400;
+  padding-top: 0px;
   animation-duration: 3s;
 }
 
@@ -58,7 +61,7 @@ h1 {
   width: 300px;
   border-radius: 5px;
   border-style: solid;
-  border-color: #f4f4f4;
+  border-color: #cecccc;
   font-size: 12px;
 }
 
@@ -68,12 +71,12 @@ h1 {
   border-style: solid;
   margin-top: 5px;
   margin-bottom: 5px;
-  border-color: #f4f4f4;
+  border-color: #cecccc;
   font-size: 12px;
 }
 
 .submit-button {
   border-radius: 5px;
-  width: 80px;
+  width: 105px;
   font-size: 12px;
 }

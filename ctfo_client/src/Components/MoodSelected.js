@@ -17,7 +17,7 @@ const MoodSelected = ({mood}) => {
     <div className="mood-selected">
       <p className="quote-text animation fadeIn">{mood.quotes[index].text}</p>
       <p className="quote-author animation fadeIn">-{mood.quotes[index].author}</p>
-      <img className="yoga-image" width="415" height="415" src={mood.images[randomNum(mood.images.length)].imageUrl} alt=""></img>
+      <img className="yoga-image" width="415" height="380" src={mood.images[randomNum(mood.images.length)].imageUrl} alt=""></img>
       <iframe title="mood-video" width="420" height="235" src={mood.videos[randomNum(mood.videos.length)].videoUrl} frameBorder="0" allowFullScreen></iframe>
       <CommentForm />
     </div>
