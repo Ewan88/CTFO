@@ -1,0 +1,30 @@
+#navBar {
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+  background-color: purple;
+}
+
+li {
+  padding: 10px;
+}
+
+a {
+  font-size: large;
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  font-weight: bold;
+}
