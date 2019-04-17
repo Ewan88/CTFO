@@ -37,7 +37,9 @@ class VideoPlayer extends Component {
        onRequestClose={this.closeModal}
        contentLabel="Example Modal"
        ariaHideApp={false}>
-       <iframe className="you-tube" title="button-video" src={this.props.videos[this.randomNum(this.props.videos.length)].videoUrl} frameBorder="0" allowFullScreen></iframe>
+       <div className="video-wrapper">
+          <iframe className="you-tube" title="button-video" src={this.props.videos[this.randomNum(this.props.videos.length)].videoUrl} frameBorder="0" allowFullScreen></iframe>
+       </div>
        <button onClick={this.closeModal}>close</button>
       </Modal>
     )
