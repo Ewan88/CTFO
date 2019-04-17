@@ -12,6 +12,7 @@ class ZenMe extends Component {
       this.getZen = this.getZen.bind(this);
       this.openShowZen = this.openShowZen.bind(this);
       this.openModal = this.openModal.bind(this);
+      this.closeModal = this.closeModal.bind(this);
   }
 
   getZen(){
@@ -22,7 +23,13 @@ class ZenMe extends Component {
   }
 
   openModal() {
+    console.log("Open modal cslled from zenme");
   this.setState({modalIsOpen: true});
+  }
+  
+  closeModal() {
+    console.log("Closemodal called from zenme");
+  this.setState({modalIsOpen: false});
   }
 
   openShowZen(){
@@ -37,7 +44,7 @@ class ZenMe extends Component {
         <div class="animated slideInRight duration-3s">
           <button className="button" onClick={this.openShowZen}>Zen Me!</button>
         </div>
-        <VideoPlayer videos={this.state.videos}/>
+        <VideoPlayer videos={this.state.videos} closeModal={this.closeModal} status={this.state.modalIsOpen}/>
       </React.Fragment>
      )
   }

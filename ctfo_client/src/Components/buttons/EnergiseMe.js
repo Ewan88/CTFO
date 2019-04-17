@@ -12,6 +12,7 @@ class EnergiseMe extends Component {
       this.getEnergy = this.getEnergy.bind(this);
       this.closeModal = this.closeModal.bind(this);
       this.openShowEnergy = this.openShowEnergy.bind(this);
+      this.openModal = this.openModal.bind(this);
   }
 
   getEnergy(){
@@ -21,11 +22,16 @@ class EnergiseMe extends Component {
     .then(data => this.setState({videos: data._embedded.videos}))
   }
 
+  openModal() {
+  this.setState({modalIsOpen: true});
+  }
+
   closeModal() {
   this.setState({modalIsOpen: false});
   }
 
   openShowEnergy(){
+    this.openModal();
     this.getEnergy();
   }
 
@@ -35,7 +41,7 @@ class EnergiseMe extends Component {
         <div class="animated slideInRight duration-3s">
           <button className="button" onClick={this.openShowEnergy}>Energise Me!</button>
         </div>
-        <VideoPlayer videos={this.state.videos}/>
+        <VideoPlayer videos={this.state.videos} closeModal={this.closeModal} status={this.state.modalIsOpen}/>
       </React.Fragment>
      )
   }

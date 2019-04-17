@@ -264,22 +264,22 @@ public class DataLoader implements ApplicationRunner {
 
         Journal journalEntry1 = new Journal(
                 testDate1,
-                "test comment 1",
-                "test mood 1"
+                "I tried out the stretches, they helped me feel less fidgety!  I watched a video which cheered me up a lot :). ",
+                "Relaxed"
         );
         journalRepository.save(journalEntry1);
 
         Journal journalEntry2 = new Journal(
                 testDate2,
-                "test comment2 ",
-                "test mood 2"
+                "Today I was feeling really angry and down, after reading the quote and watching the video I felt much more happy and relaxed, I am going to do the stretches later on when I get home.",
+                "Happy and content"
         );
         journalRepository.save(journalEntry2);
 
         Journal journalEntry3 = new Journal(
                 testDate3,
-                "test comment 3",
-                "test mood 3"
+                "Today I needed the rage me button, it helped a lot, I tried the stretches but only the rage button worked for me, I need to calm down with zenMe later.",
+                "Angryish"
         );
         journalRepository.save(journalEntry3);
 
