@@ -31,11 +31,9 @@ class MoodJournal extends Component {
 
   loadEntries(){
     let dates = [];
-    let j = 0;
     if (this.state.entries.length > 0) {
       for (let i = 0; i < this.state.entries.length; i++){
         dates.push(new Date(dayjs(this.state.entries[i].date).format('YYYY-M-D')));
-        j++;
       }
       return this.loadCalendar(dates);
     } else {
