@@ -1,5 +1,17 @@
 # Meditation
 
+## Project description
+
+A team project where we created our own idea and wrote our own MVP and extensions.
+
+We used:
+
+Java
+PSQL
+Spring
+JavaScript
+React
+
 ## Aim
 
 Task is to create a web application that allows a user to select their mood on that day and the program provides some information on how it can be improved.
@@ -23,3 +35,35 @@ The user can then view a mood journal which displays what strategies were effect
 ## Super Extensions
 
 - Add other buttons: "Rage Me", "Energise Me", "Emergency Kittens"
+
+## Screen Grabs
+
+![Screen Home](./ScreenGrabs/home.png)
+_screen home_
+
+![Screen Mood](./ScreenGrabs/moodSelected.png)
+_mood selected_
+
+![Screen Mood](./ScreenGrabs/moodSelected2.png)
+_mood selected_
+
+![Screen Mood Journal](./ScreenGrabs/moodJournal.png)
+_mood journal_
+
+![Screen Buttons](./ScreenGrabs/buttons.png)
+_buttons_
+
+![Screen Buttons](./ScreenGrabs/buttonSelected.png)
+_button selected_
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.

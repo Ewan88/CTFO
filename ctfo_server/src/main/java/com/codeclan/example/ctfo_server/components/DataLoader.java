@@ -258,9 +258,9 @@ public class DataLoader implements ApplicationRunner {
         );
         videoRepository.save(videoSad2);
 
-        Date testDate1 = new SimpleDateFormat("yyyy-MM-dd").parse("2019-04-19");
-        Date testDate2 = new SimpleDateFormat("yyyy-MM-dd").parse("2019-04-20");
-        Date testDate3 = new SimpleDateFormat("yyyy-MM-dd").parse("2019-04-21");
+        Date testDate1 = new SimpleDateFormat("yyyy-MM-dd").parse("2019-04-01");
+        Date testDate2 = new SimpleDateFormat("yyyy-MM-dd").parse("2019-04-05");
+        Date testDate3 = new SimpleDateFormat("yyyy-MM-dd").parse("2019-04-15");
 
         Journal journalEntry1 = new Journal(
                 testDate1,
