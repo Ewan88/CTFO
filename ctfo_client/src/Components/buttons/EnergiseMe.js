@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Modal from 'react-modal';
+
 import VideoPlayer from '../videoPlayer.js'
 
 class EnergiseMe extends Component {
