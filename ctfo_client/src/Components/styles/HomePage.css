@@ -41,6 +41,16 @@ h1 {
    font-family: 'Varela Round', sans-serif;
  }
 
+ /* map */
+
+#map {
+  padding-left: 48px;
+}
+
+.mapboxgl-canvas {
+  border: solid black 1px;
+}
+
 /* MoodSelected */
 
 .mood-selected {
@@ -231,6 +241,16 @@ and (max-device-width : 568px) {
     background: #d8d8d8;
   }
 
+  .mapboxgl-canvas {
+    margin-left: 20px;
+    width: 100%;
+  }
+
+  #map {
+    padding: 0;
+    padding-left: 40px;
+  }
+
 }
 
 /* ipads */
@@ -300,6 +320,17 @@ and (orientation : portrait) {
 
   #button-container {
     margin-top: 80px;
+  }
+
+  .mapboxgl-canvas {
+    width: 100%;
+    margin-top: 50px;
+    margin-right: 30px;
+  }
+
+  #map {
+    padding: 0;
+    padding-left: 40px;
   }
 
 }

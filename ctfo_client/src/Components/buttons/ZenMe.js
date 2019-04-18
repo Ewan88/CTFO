@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Modal from 'react-modal';
+
 import VideoPlayer from '../videoPlayer';
 
 class ZenMe extends Component {
@@ -26,7 +26,7 @@ class ZenMe extends Component {
     console.log("Open modal cslled from zenme");
   this.setState({modalIsOpen: true});
   }
-  
+
   closeModal() {
     console.log("Closemodal called from zenme");
   this.setState({modalIsOpen: false});
