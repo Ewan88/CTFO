@@ -202,10 +202,18 @@ and (max-device-width : 568px) {
   .ReactModal__Overlay {
     height: 250px;
     background-color: black;
+    margin-top: 80px;
+  }
+
+  .ReactModal__Content button {
+    font-size: 20px;
+    border: solid black 1px;
+    background-color: white;
   }
 
   .close-modal-window {
     font-size: 30px;
+    background-color: white;
   }
 
   .DayPicker-Month {
@@ -245,10 +253,25 @@ and (orientation : portrait) {
   .ReactModal__Overlay {
     height: 200px;
     background-color: black;
+    margin-top: 80px;
+  }
+
+  .ReactModal__Content button {
+    font-size: 20px;
+    border: solid black 1px;
+    background-color: white;
   }
 
   .close-modal-window {
     font-size: 30px;
+  }
+
+  .ReactModal__Overlay #kittens {
+    height: 400px;
+  }
+
+  #kittens {
+    width: auto;
   }
 
   #customRange1
