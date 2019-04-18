@@ -138,6 +138,9 @@ h1 {
   height: auto;
 }
 
+#customRange1 {
+  width: 300px;
+}
 
 
 /* mediaQueries */
@@ -209,6 +212,17 @@ and (max-device-width : 568px) {
     margin-left: 50px;
   }
 
+  #customRange1
+  {
+    -webkit-appearance: none !important;
+    width: 250px;
+    height: 10px;
+    cursor: pointer;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background: #d8d8d8;
+  }
+
 }
 
 /* ipads */
@@ -235,6 +249,17 @@ and (orientation : portrait) {
 
   .close-modal-window {
     font-size: 30px;
+  }
+
+  #customRange1
+  {
+    -webkit-appearance: none !important;
+    width: 300px;
+    height: 10px;
+    cursor: pointer;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background: #d8d8d8;
   }
 
   #navBar {
