@@ -163,6 +163,7 @@ and (max-device-width : 568px) {
   .slider {
     text-align: center;
     margin: 10px;
+    margin-bottom: 50px;
   }
 
   .custom-range {
@@ -170,12 +171,9 @@ and (max-device-width : 568px) {
   }
 
   #navBar {
-    display: inline-flex;
-    width: 100%;
+    width: 90%;
     padding: 10px;
     left: 0;
-
-
   }
 
   h1 {
@@ -211,7 +209,9 @@ and (orientation : portrait) {
   }
 
   .slider {
-    margin: 50px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 80px;
     width: 600px;
   }
 
@@ -222,6 +222,12 @@ and (orientation : portrait) {
 
   .close-modal-window {
     font-size: 30px;
+  }
+
+  #navBar {
+    width: 90%;
+    padding: 10px;
+    left: 0;
   }
 
 }
