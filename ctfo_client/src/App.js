@@ -4,6 +4,7 @@ import './App.css';
 import './Components/styles/HomePage.css';
 import './Components/styles/buttons.css'
 import './Components/styles/moodJournal.css'
+import './Components/styles/map.css'
 
 
 class App extends Component {
