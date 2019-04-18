@@ -157,6 +157,7 @@ and (max-device-width : 568px) {
     text-align: left;
     padding: 10px;
     height: 175px;
+    padding-top: 75px;
   }
 
   .slider {
@@ -166,6 +167,15 @@ and (max-device-width : 568px) {
 
   .custom-range {
     size: 100px;
+  }
+
+  #navBar {
+    display: inline-flex;
+    width: 100%;
+    padding: 10px;
+    left: 0;
+
+
   }
 
   h1 {
