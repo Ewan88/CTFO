@@ -130,9 +130,11 @@ h1 {
 }
 
 .ReactModal__Content {
-  width: 100%;
+  width: auto;
   height: auto;
 }
+
+
 
 /* mediaQueries */
 @media only screen
