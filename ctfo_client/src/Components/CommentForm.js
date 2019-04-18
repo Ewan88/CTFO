@@ -17,7 +17,7 @@ const CommentForm = (props) => {
   function handleCommentPost(comment){
     const request = new Request();
     request.post('/api/journals', comment).then(() => {
-      window.location = '/journals'
+      window.location = '/moodJournal'
     })
   }
 
