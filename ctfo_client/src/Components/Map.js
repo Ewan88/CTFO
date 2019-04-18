@@ -25,7 +25,7 @@ const Map = () => {
   return (
     <div id="map">
     <Map
-    style="mapbox://styles/mapbox/satellite-v9"
+    style="mapbox://styles/mapbox/streets-v8"
     center={[ -4.251433, 55.860916 ]}
     containerStyle={{
       height: "100vh",
